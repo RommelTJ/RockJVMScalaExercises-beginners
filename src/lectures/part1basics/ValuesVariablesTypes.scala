@@ -7,7 +7,7 @@ object ValuesVariablesTypes extends App {
   val x = 42
   println(x)
 
-  // Strings
+  // Strings. Semicolons are optional.
   val aString: String = "Hello"
 
 }
