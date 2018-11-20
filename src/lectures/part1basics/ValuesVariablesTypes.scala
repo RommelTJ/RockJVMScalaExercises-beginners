@@ -13,4 +13,7 @@ object ValuesVariablesTypes extends App {
   // Booleans.
   val aBoolean: Boolean = false
 
+  // Characters.
+  val aChar: Char = 'a'
+
 }
