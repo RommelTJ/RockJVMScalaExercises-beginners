@@ -7,6 +7,7 @@ object ValuesVariablesTypes extends App {
   val x = 42
   println(x)
 
-
+  // Strings
+  val aString: String = "Hello"
 
 }
