@@ -28,4 +28,8 @@ object ValuesVariablesTypes extends App {
   // Doubles
   val aDouble: Double = 3.14
 
+  // Variables in Scala, aka Side-effects.
+  var aVariable = 4
+  aVariable = 5
+
 }
