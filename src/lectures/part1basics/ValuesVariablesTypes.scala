@@ -25,5 +25,7 @@ object ValuesVariablesTypes extends App {
 
   // Floats
   val aFloat: Float = 2.0f
+  // Doubles
+  val aDouble: Double = 3.14
 
 }
