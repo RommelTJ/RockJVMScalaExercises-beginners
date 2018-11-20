@@ -17,6 +17,10 @@ object ValuesVariablesTypes extends App {
   val aChar: Char = 'a'
 
   // Ints.
-  val anInt: Int = 23
+  val anInt: Int = 23 // 4 Bytes
+
+  // Shorts and Longs
+  val aShort: Short = 4613 // 2 Bytes
+  val aLong: Long = 34636 // 8 Bytes
 
 }
