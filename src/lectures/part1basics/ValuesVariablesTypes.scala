@@ -23,4 +23,7 @@ object ValuesVariablesTypes extends App {
   val aShort: Short = 4613 // 2 Bytes
   val aLong: Long = 34636 // 8 Bytes
 
+  // Floats
+  val aFloat: Float = 2.0f
+
 }
