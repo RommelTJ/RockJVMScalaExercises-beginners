@@ -10,4 +10,7 @@ object ValuesVariablesTypes extends App {
   // Strings. Semicolons are optional.
   val aString: String = "Hello"
 
+  // Booleans.
+  val aBoolean: Boolean = false
+
 }
