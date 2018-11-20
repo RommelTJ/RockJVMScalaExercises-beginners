@@ -16,4 +16,7 @@ object ValuesVariablesTypes extends App {
   // Characters.
   val aChar: Char = 'a'
 
+  // Ints.
+  val anInt: Int = 23
+
 }
