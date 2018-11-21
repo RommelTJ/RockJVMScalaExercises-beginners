@@ -35,7 +35,7 @@ object Expressions extends App {
 
   // Loops are discouraged in Scala. Don't do this.
   var i = 0
-  while (i < 10) {
+  val aWhile = while (i < 10) {
     println(i)
     i += 1
   }
