@@ -28,4 +28,10 @@ object Functions extends App {
   // Using Unit as the return type.
   def aFunctionWithSideEffects(aString: String): Unit = println(aString)
 
+  // Using code blocks to define auxiliary functions.
+  def aBigFunction(n: Int): Int = {
+    def aSmallerFunction(a: Int, b: Int): Int = a + b
+    aSmallerFunction(n, n-1)
+  }
+
 }
