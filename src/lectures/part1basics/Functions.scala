@@ -38,4 +38,11 @@ object Functions extends App {
   def aGreeterFunction(name: String, age: Int): String = "Hi, my name is " + name + " and I am " + age + " years old."
   println(aGreeterFunction("Rommel", 30))
 
+  // 2. Factorial function 1 * 2 * 3 * ... * n.
+  def aFactorialFunction(n: Int): Int = {
+    if (n <= 0) 1
+    else n * aFactorialFunction(n-1)
+  }
+  println(aFactorialFunction(5))
+
 }
