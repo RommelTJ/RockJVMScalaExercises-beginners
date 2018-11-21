@@ -57,4 +57,20 @@ object Expressions extends App {
   // The value of the block is the value of its last expression.
   println(aCodeBlock)
 
+  // 1. Difference between "Hello World" and println("Hello World")
+
+
+  // 2. What is the value of the below code block?
+  val someValue = {
+    2 < 3
+  }
+  println(someValue)
+
+  // 3. What is the value of the below code block?
+  val someOtherBlock = {
+    if (someValue) 239 else 986
+    42
+  }
+  println(someOtherBlock)
+
 }
