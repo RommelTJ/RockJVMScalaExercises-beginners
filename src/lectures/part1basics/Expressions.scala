@@ -23,4 +23,13 @@ object Expressions extends App {
   aVariable += 3 // also works with -=, *=, /=
   // Note: These are all side-effects.
 
+  // Instructions (DO) vs Expressions (VALUE).
+  // In Scala we think in terms of expressions.
+
+  // If expression.
+  val aCondition = true
+  val aConditionedValue = if(aCondition) 5 else 3
+  println(aConditionedValue)
+
+
 }
