@@ -18,4 +18,8 @@ object Expressions extends App {
   println(!(1 == x)) // true
   // Logical negation. !, &&, ||
 
+  // Operations on variables.
+  var aVariable = 2
+  aVariable += 3 // also works with -=, *=, /=
+
 }
