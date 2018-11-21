@@ -45,4 +45,11 @@ object Functions extends App {
   }
   println(aFactorialFunction(5))
 
+  // 3. Fibonacci Function.
+  def aFibonacci(n: Int): Int = {
+    if (n <= 2) 1
+    else aFibonacci(n - 1) + aFibonacci(n - 2)
+  }
+  println(aFibonacci(8))
+
 }
