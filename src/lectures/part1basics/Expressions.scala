@@ -58,7 +58,7 @@ object Expressions extends App {
   println(aCodeBlock)
 
   // 1. Difference between "Hello World" and println("Hello World")
-
+  // "Hello World" is a value of type String, while println("Hello World") is an expression that returns Unit (side-effect).
 
   // 2. What is the value of the below code block?
   val someValue = {
