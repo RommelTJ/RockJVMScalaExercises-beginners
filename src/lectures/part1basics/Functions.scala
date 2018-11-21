@@ -25,4 +25,7 @@ object Functions extends App {
   }
   println(aRepeatedFunction("hello", 3))
 
+  // Using Unit as the return type.
+  def aFunctionWithSideEffects(aString: String): Unit = println(aString)
+
 }
