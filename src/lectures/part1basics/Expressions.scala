@@ -64,7 +64,7 @@ object Expressions extends App {
   val someValue = {
     2 < 3
   }
-  println(someValue)
+  println(someValue) // true
 
   // 3. What is the value of the below code block?
   val someOtherBlock = {
