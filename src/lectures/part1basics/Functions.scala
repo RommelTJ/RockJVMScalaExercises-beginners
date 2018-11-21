@@ -18,6 +18,7 @@ object Functions extends App {
   println(aParameterlessFunction)
 
   // Do this instead of loops. Use recursion instead of loops.
+  // You need to specify return types of functions in recursive functions. You can also use Unit.
   def aRepeatedFunction(aString: String, n: Int): String = {
     if (n == 1) aString
     else aString + aRepeatedFunction(aString, n-1)
