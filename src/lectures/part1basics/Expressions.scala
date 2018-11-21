@@ -29,7 +29,9 @@ object Expressions extends App {
   // If expression.
   val aCondition = true
   val aConditionedValue = if(aCondition) 5 else 3
-  println(aConditionedValue)
+  println(aConditionedValue) // prints 5
+  println(if(aCondition) 5 else 3) // prints 5
+  println((if(aCondition) 5 else 3) + 2) // prints 7
 
 
 }
