@@ -8,5 +8,6 @@ object Expressions extends App {
 
   // Math expressions.
   println(2 + 3 * 4)
+  // Math operators: +, -, *, /, &, |, ^, <<, >>, >>> (right shift with zero extension).
 
 }
