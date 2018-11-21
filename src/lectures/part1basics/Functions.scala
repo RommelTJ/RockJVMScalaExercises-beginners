@@ -4,9 +4,12 @@ object Functions extends App {
 
   // Scala Functions.
   def aFunction(a: String, b: Int): String = a + " " + b
-  // This is a function with a code block, which is also an expression in Scala. 
+  // This is a function with a code block, which is also an expression in Scala.
   def aFunction2(a: String, b: Int): String = {
     a + " " + b
   }
+
+  // Calling a function.
+  println(aFunction("Hello", 3))
 
 }
