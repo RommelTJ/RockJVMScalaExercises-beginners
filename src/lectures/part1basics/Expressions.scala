@@ -71,6 +71,6 @@ object Expressions extends App {
     if (someValue) 239 else 986
     42
   }
-  println(someOtherBlock)
+  println(someOtherBlock) // 42
 
 }
