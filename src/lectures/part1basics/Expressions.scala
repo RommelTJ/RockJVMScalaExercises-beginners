@@ -45,6 +45,15 @@ object Expressions extends App {
   val aWeirdValue = (aVariable = 3) // Unit value, equivalent to void.
   println(aWeirdValue) // prints "()"
 
-  // Side Effect examples: println(), whiles, and reassigning (vars). 
+  // Side Effect examples: println(), whiles, and reassigning (vars).
+
+  // Code blocks
+
+  val aCodeBlock = {
+    val y = 2
+    val z = y + 1
+    if (z > 2) "hello" else "goodbye"
+  }
+  println(aCodeBlock)
 
 }
