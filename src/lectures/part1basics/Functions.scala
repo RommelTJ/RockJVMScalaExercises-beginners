@@ -34,4 +34,8 @@ object Functions extends App {
     aSmallerFunction(n, n-1)
   }
 
+  // 1. A greeter function (name, age) => "Hi, my name is $name and I am $age years old."
+  def aGreeterFunction(name: String, age: Int): String = "Hi, my name is " + name + " and I am " + age + " years old."
+  println(aGreeterFunction("Rommel", 30))
+
 }
