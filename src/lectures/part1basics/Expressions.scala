@@ -14,4 +14,8 @@ object Expressions extends App {
   println(1 == x)
   // Equality Operators: ==, !=, >, >=, <, <=
 
+  // Boolean expressions.
+  println(!(1 == x)) // true
+  // Logical negation. !, &&, ||
+
 }
