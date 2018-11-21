@@ -33,5 +33,12 @@ object Expressions extends App {
   println(if(aCondition) 5 else 3) // prints 5
   println((if(aCondition) 5 else 3) + 2) // prints 7
 
+  // Loops are discouraged in Scala. Don't do this.
+  var i = 0
+  while (i < 10) {
+    println(i)
+    i += 1
+  }
+
 
 }
