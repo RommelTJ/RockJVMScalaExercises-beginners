@@ -21,5 +21,6 @@ object Expressions extends App {
   // Operations on variables.
   var aVariable = 2
   aVariable += 3 // also works with -=, *=, /=
+  // Note: These are all side-effects.
 
 }
