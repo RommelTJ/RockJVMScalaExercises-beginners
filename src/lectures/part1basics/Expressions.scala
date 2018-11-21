@@ -54,6 +54,7 @@ object Expressions extends App {
     val z = y + 1
     if (z > 2) "hello" else "goodbye"
   }
+  // The value of the block is the value of its last expression.
   println(aCodeBlock)
 
 }
