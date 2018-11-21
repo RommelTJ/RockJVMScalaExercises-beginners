@@ -12,4 +12,9 @@ object Functions extends App {
   // Calling a function.
   println(aFunction("Hello", 3))
 
+  // Calling a function without parameters by just their names.
+  def aParameterlessFunction(): Int = 42
+  println(aParameterlessFunction())
+  println(aParameterlessFunction)
+
 }
