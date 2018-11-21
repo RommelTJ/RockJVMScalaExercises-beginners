@@ -10,4 +10,8 @@ object Expressions extends App {
   println(2 + 3 * 4)
   // Math operators: +, -, *, /, &, |, ^, <<, >>, >>> (right shift with zero extension).
 
+  // Equality
+  println(1 == x)
+  // Equality Operators: ==, !=, >, >=, <, <=
+
 }
