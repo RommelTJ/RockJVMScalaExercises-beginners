@@ -36,4 +36,9 @@ object StringOps extends App {
   val myth = f"$name%s can eat $speed%2.2f burgers per minute." // 2 characters total, minimum; 2 decimal precision.
   println(myth)
 
+  // Raw-interpolator.
+  println(raw"This is a \n newline") // Prints the backslash n
+  val escaped = "This is a \n newline"
+  println(raw"$escaped") // This still prints the backslash normally since it is injected.
+
 }
