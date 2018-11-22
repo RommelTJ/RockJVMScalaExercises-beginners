@@ -6,4 +6,6 @@ object DefaultArgs extends App {
     if (n <= 1) acc
     else tailRecFactorial(n - 1, n * acc)
 
+  val fact10 = tailRecFactorial(10, 1)
+  println(fact10)
 }
