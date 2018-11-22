@@ -16,5 +16,6 @@ object StringOps extends App {
   val aNumberString = "45"
   val aNumber = aNumberString.toInt
   println(aNumber)
-
+  println('a' +: aNumberString) // Prepending operator
+  println(aNumberString :+ 'z') // Appending operator
 }
