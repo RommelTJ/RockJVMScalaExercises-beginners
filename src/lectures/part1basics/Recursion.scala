@@ -37,4 +37,9 @@ object Recursion extends App {
 
   // When you need loops, use TAIL RECURSION.
 
+  // Exercises.
+  // 1. Concatenate a string n times.
+  // 2. IsPrime function tail recursive.
+  // 3. Fibonacci function, tail recursive.
+
 }
