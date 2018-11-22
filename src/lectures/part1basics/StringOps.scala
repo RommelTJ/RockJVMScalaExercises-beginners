@@ -31,4 +31,9 @@ object StringOps extends App {
   println(greeting)
   println(greeting2)
 
+  // F-interpolators. (uses printf format)
+  val speed = 12.2f
+  val myth = f"$name%s can eat $speed%2.2f burgers per minute." // 2 characters total, minimum; 2 decimal precision.
+  println(myth)
+
 }
