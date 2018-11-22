@@ -7,4 +7,9 @@ object CBNvsCBV extends App {
     println("By value: " + x)
   }
 
+  def calledByName(x: => Long): Unit = {
+    println("By value: " + x)
+    println("By value: " + x)
+  }
+
 }
