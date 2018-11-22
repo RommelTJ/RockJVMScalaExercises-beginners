@@ -21,4 +21,12 @@ object StringOps extends App {
   println(str.reverse) // Reversing a String.
   println(str.take(2)) // Get the first two characters, 'He'.
 
+  // Scala-specific: String interpolators.
+
+  // S-interpolators.
+  val name = "David"
+  val age = 12
+  val greeting = s"Hello, my name is $name and I am $age years old."
+  println(greeting)
+
 }
