@@ -18,4 +18,6 @@ object StringOps extends App {
   println(aNumber)
   println('a' +: aNumberString) // Prepending operator
   println(aNumberString :+ 'z') // Appending operator
+  println(str.reverse) // Reversing a String.
+
 }
