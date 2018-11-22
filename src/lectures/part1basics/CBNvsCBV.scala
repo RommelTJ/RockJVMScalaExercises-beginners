@@ -16,4 +16,8 @@ object CBNvsCBV extends App {
   calledByValue(System.nanoTime()) // This returns the same time twice.
   calledByName(System.nanoTime()) // This returns two different times.
 
+  // Note on call by value vs call by name.
+  // In By Value, the exact value is computed before the function evaluates.
+  // In By Name, the expression is passed lirerally as-is and the expression is evaluated every time.
+
 }
