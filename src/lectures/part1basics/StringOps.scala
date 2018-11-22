@@ -13,4 +13,8 @@ object StringOps extends App {
   println(str.toLowerCase) // Converting to Lower Case.
   println(str.length) // Getting the length of a string.
 
+  val aNumberString = "45"
+  val aNumber = aNumberString.toInt
+  println(aNumber)
+
 }
