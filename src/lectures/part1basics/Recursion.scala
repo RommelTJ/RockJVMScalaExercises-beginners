@@ -35,4 +35,6 @@ object Recursion extends App {
   = 1 * 2 * 3 * 4 * ... * 8 * 9 * 10
    */
 
+  // When you need loops, use TAIL RECURSION.
+
 }
