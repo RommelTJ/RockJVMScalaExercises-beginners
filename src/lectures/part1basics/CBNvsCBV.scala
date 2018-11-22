@@ -23,5 +23,6 @@ object CBNvsCBV extends App {
   def infinite(): Int = 1 + infinite()
   def printFirst(x: Int, y: => Int) = println(x)
   printFirst(34, infinite())
+  // This works because => delays the evaluation of infinite(), and since y is never used, it's fine and prints 34.
 
 }
