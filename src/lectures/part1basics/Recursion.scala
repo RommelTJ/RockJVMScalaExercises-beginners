@@ -58,10 +58,11 @@ object Recursion extends App {
 
   // 2. IsPrime function tail recursive.
   def isPrime(n: Int): Boolean = {
+    @tailrec
     def isPrimeTailRec(x: Int, isStillPrime: Boolean): Boolean = {
       if (!isStillPrime) false
       else if (x <= 1) true
-      else isPrimeTailRec(x-1, n % x != 0)
+      else isPrimeTailRec(x-1, n % x != 0 && isStillPrime)
     }
     isPrimeTailRec(n / 2, isStillPrime = true)
   }
