@@ -9,5 +9,6 @@ object StringOps extends App {
   println(str.substring(7, 11)) // Returns index 7 inclusive to 11 exclusive, 'I am'.
   println(str.split(" ").toList) // Splits by spaces.
   println(str.startsWith("Hello")) // Testing if it starts with "Hello".
+  println(str.replace(" ", "-")) // Replacing spaces with dashes.
 
 }
