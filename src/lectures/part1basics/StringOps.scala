@@ -19,5 +19,6 @@ object StringOps extends App {
   println('a' +: aNumberString) // Prepending operator
   println(aNumberString :+ 'z') // Appending operator
   println(str.reverse) // Reversing a String.
+  println(str.take(2)) // Get the first two characters, 'He'.
 
 }
