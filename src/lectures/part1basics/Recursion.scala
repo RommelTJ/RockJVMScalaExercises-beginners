@@ -71,5 +71,16 @@ object Recursion extends App {
   println(isPrime(357235626))
 
   // 3. Fibonacci function, tail recursive.
+  def calculateFibonacci(n: Int): Int = {
+    @tailrec
+    def calcFibonacciTailRec(x: Int, accumulator1: Int, accumulator2: Int): Int = {
+      if (x >= n) accumulator1
+      else calcFibonacciTailRec(x + 1, accumulator1 + accumulator2, accumulator1)
+    }
+
+    if (n <= 2) 1
+    else calcFibonacciTailRec(2, 1, 1)
+  }
+  println(calculateFibonacci(8))
 
 }
