@@ -1,5 +1,7 @@
 package lectures.part1basics
 
+import scala.annotation.tailrec
+
 object Recursion extends App {
 
   def factorial(n: Int): Int = {
@@ -14,9 +16,10 @@ object Recursion extends App {
   println(factorial(10))
 
   def anotherFactorial(n: Int): BigInt = {
+    @tailrec
     def factorialHelper(x: Int, accumulator: BigInt): BigInt = {
       if (x <= 1) accumulator
-      else factorialHelper(x-1, x * accumulator)
+      else factorialHelper(x-1, x * accumulator) // TAIL RECURSION = use recursive call as the LAST expression.
     }
     factorialHelper(n, 1)
   }
