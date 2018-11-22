@@ -27,6 +27,8 @@ object StringOps extends App {
   val name = "David"
   val age = 12
   val greeting = s"Hello, my name is $name and I am $age years old."
+  val greeting2 = s"Hello, my name is $name and I will be turning ${age + 1}."
   println(greeting)
+  println(greeting2)
 
 }
