@@ -39,6 +39,16 @@ object Recursion extends App {
 
   // Exercises.
   // 1. Concatenate a string n times.
+  def stringConcat(aString: String, n: Int): String = {
+    @tailrec
+    def stringConcatHelper(x: Int, accumulator: String): String = {
+      if (x <= 1) accumulator
+      else stringConcatHelper(x-1, accumulator + "" + aString)
+    }
+    stringConcatHelper(n, aString)
+  }
+  println(stringConcat("hello,", 5))
+
   // 2. IsPrime function tail recursive.
   // 3. Fibonacci function, tail recursive.
 
