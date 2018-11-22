@@ -11,5 +11,6 @@ object StringOps extends App {
   println(str.startsWith("Hello")) // Testing if it starts with "Hello".
   println(str.replace(" ", "-")) // Replacing spaces with dashes.
   println(str.toLowerCase) // Converting to Lower Case.
+  println(str.length) // Getting the length of a string.
 
 }
