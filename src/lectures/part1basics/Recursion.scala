@@ -49,6 +49,13 @@ object Recursion extends App {
   }
   println(stringConcat("hello,", 5))
 
+  @tailrec
+  def concatentatTailRec(aString: String, n: Int, accumulator: String): String = {
+    if (n <= 0) accumulator
+    else concatentatTailRec(aString, n-1, aString + accumulator)
+  }
+  println(concatentatTailRec("hello,", 5, ""))
+
   // 2. IsPrime function tail recursive.
   // 3. Fibonacci function, tail recursive.
 
