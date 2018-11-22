@@ -7,6 +7,7 @@ object CBNvsCBV extends App {
     println("By value: " + x)
   }
 
+  // The '=>' parameter tells the compiler that the parameter will be called by name.
   def calledByName(x: => Long): Unit = {
     println("By value: " + x)
     println("By value: " + x)
