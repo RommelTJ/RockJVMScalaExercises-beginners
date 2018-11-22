@@ -6,5 +6,5 @@ object StringOps extends App {
 
   // Sample String Operations.
   println(str.charAt(2)) // Returns character at index 2, 'l'.
-
+  println(str.substring(7, 11)) // Returns index 7 inclusive to 11 exclusive, 'I am'.
 }
