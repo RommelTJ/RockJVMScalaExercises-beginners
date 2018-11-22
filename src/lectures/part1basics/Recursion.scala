@@ -57,6 +57,18 @@ object Recursion extends App {
   println(concatentatTailRec("hello,", 5, ""))
 
   // 2. IsPrime function tail recursive.
+  def isPrime(n: Int): Boolean = {
+    def isPrimeTailRec(x: Int, isStillPrime: Boolean): Boolean = {
+      if (!isStillPrime) false
+      else if (x <= 1) true
+      else isPrimeTailRec(x-1, n % x != 0)
+    }
+    isPrimeTailRec(n / 2, isStillPrime = true)
+  }
+  println(isPrime(7))
+  println(isPrime(2003))
+  println(isPrime(357235626))
+
   // 3. Fibonacci function, tail recursive.
 
 }
