@@ -6,6 +6,7 @@ object MethodNotations extends App {
     def likes(movie: String): Boolean = movie == favoriteMovie
     def hangOutWith(person: Person): String = s"${this.name} is hanging out with ${person.name}."
     def +(person: Person): String = s"${person.name} is hanging out with ${this.name}."
+    def unary_! : String = s"$name, what the heck!?"
   }
 
   val mary = new Person("Mary", "Inception")
@@ -23,7 +24,9 @@ object MethodNotations extends App {
   println(1.+(2)) // 3
 
   // Prefix Notation
-  val x = -1 // Unary Operators are also methods!
+  val x = -1 // Unary Operators are also methods! '+', '-', '!', '~'.
   val y = 1.unary_-
+  println(!mary) // Syntactic sugar.
+  println(mary.unary_!)
 
 }
