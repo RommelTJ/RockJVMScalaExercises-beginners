@@ -9,6 +9,21 @@ object OOBasics extends App {
   person.greet("Mike")
   person.greet()
 
+  // Testing exercises.
+  val author = new Writer("Charles", "Dickens", 1812)
+  val author2 = new Writer("Rommel", "Rico", 1988)
+  val impostor = new Writer("Charles", "Dickens", 1812)
+  val novel = new Novel("Great Expectations", 1861, author)
+  println(author.yearOfBirth)
+  println(author.fullName)
+  println(novel.authorAge)
+  println(novel.isWrittenBy(author))
+  println(novel.isWrittenBy(author2))
+  println(novel.isWrittenBy(impostor))
+  val novel2 = novel.copy(2018)
+  println(novel.authorAge)
+  println(novel.isWrittenBy(author))
+
 }
 
 // Class with constructor
