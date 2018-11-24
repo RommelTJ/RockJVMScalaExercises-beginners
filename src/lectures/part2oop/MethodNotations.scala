@@ -7,6 +7,7 @@ object MethodNotations extends App {
     def hangOutWith(person: Person): String = s"${this.name} is hanging out with ${person.name}."
     def +(person: Person): String = s"${person.name} is hanging out with ${this.name}."
     def unary_! : String = s"$name, what the heck!?"
+    def isAlive: Boolean = true
   }
 
   val mary = new Person("Mary", "Inception")
@@ -28,5 +29,9 @@ object MethodNotations extends App {
   val y = 1.unary_-
   println(!mary) // Syntactic sugar.
   println(mary.unary_!)
+
+  // Postfix Notation. Only available to methods without parameters.
+  println(mary.isAlive)
+  println(mary isAlive) // Not used in practice since the dot notation is more clear.
 
 }
