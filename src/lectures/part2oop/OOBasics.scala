@@ -23,7 +23,7 @@ object OOBasics extends App {
   val novel2 = novel.copy(2018)
   println(novel.authorAge)
   println(novel.isWrittenBy(author))
-
+  
 }
 
 // Class with constructor
@@ -65,7 +65,7 @@ class Writer(firstName: String, surname: String, val yearOfBirth: Int) {
 
 // Counter Class
 class Counter(x: Int) {
-  def getCurrentCount: Int = x
+  def getCurrentCount: Int = x // Or you could just make "x" parameter a val.
 
   def increment(): Counter = new Counter(x+1)
   def increment(n: Int) = new Counter(x+n)
