@@ -6,6 +6,7 @@ object MethodNotations extends App {
     def likes(movie: String): Boolean = movie == favoriteMovie
     def hangOutWith(person: Person): String = s"${this.name} is hanging out with ${person.name}."
     def +(person: Person): String = s"${person.name} is hanging out with ${this.name}."
+    def +(nickname: String): String = s"$name ($nickname)."
     def unary_! : String = s"$name, what the heck!?"
     def isAlive: Boolean = true
     def apply(): String = s"Hi! My name is $name and I like $favoriteMovie."
@@ -40,6 +41,7 @@ object MethodNotations extends App {
   println(mary()) // Equivalent to the above since compiler will delegate to the apply() method.
 
   // 1. Overload + operator and returns person + "the rockstar" => "Mary (the rockstar)".
+  println(mary + "the rockstar")
 
   // 2. Add age to person class with default 0 and add unary + operator => new Person with age + 1.
 
