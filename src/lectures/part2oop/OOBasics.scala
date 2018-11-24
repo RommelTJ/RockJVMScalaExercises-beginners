@@ -22,7 +22,6 @@ class Person(name: String, val age: Int = 0) {
   def this(name: String) = this(name, 0) // Calls primary constructor with an auxiliary constructor.
   def this() = this("John Doe")
 
-
   // Implied parameter.
   def greet(): Unit = println(s"Hi, I am $name")
 
@@ -30,4 +29,21 @@ class Person(name: String, val age: Int = 0) {
   // Adding a method. Note that "this.name" is not a field, but a parameter.
   def greet(name: String): Unit = println(s"${this.name} says: Hi, $name")
 
+}
+
+// Novel Class
+class Novel(name: String, yearOfRelease: Int, author: Writer) {
+
+  // Returns the age of author at yearOfRelease.
+  def authorAge(): Int = yearOfRelease - author.yearOfBirth
+
+  def isWrittenBy(author: Writer): Boolean = author == this.author
+
+  def copy(newYearOfRelease: Int): Novel = new Novel(name, newYearOfRelease, author)
+
+}
+
+// Writer Class
+class Writer(firstName: String, surname: String, val yearOfBirth: Int) {
+  def fullName(): String = s"$firstName $surname"
 }
