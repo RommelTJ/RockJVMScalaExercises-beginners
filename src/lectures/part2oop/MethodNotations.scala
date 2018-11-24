@@ -13,6 +13,7 @@ object MethodNotations extends App {
     def unary_! : String = s"$name, what the heck!?"
     def isAlive: Boolean = true
     def apply(): String = s"Hi! My name is $name and I like $favoriteMovie."
+    def apply(n: Int): String = s"Mary watched $favoriteMovie $n times."
   }
 
   val mary = new Person("Mary", "Inception")
@@ -57,5 +58,6 @@ object MethodNotations extends App {
 
   // 4. Overload apply method to receive a number and return String
   // mary.apply(2) => "Mary watched Inception 2 times."
+  println(mary(2))
 
 }
