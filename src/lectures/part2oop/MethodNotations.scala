@@ -39,4 +39,14 @@ object MethodNotations extends App {
   println(mary.apply())
   println(mary()) // Equivalent to the above since compiler will delegate to the apply() method.
 
+  // 1. Overload + operator and returns person + "the rockstar" => "Mary (the rockstar)".
+
+  // 2. Add age to person class with default 0 and add unary + operator => new Person with age + 1.
+
+  // 3. Add "learns" method in Person class that takes String => "Mary learns $leans". Then add learnsScala method
+  // that calls learns method with "Scala". Use it in postfix notation.
+
+  // 4. Overload apply method to receive a number and return String
+  // mary.apply(2) => "Mary watched Inception 2 times."
+
 }
