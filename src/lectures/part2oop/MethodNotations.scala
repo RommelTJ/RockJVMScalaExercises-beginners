@@ -22,4 +22,8 @@ object MethodNotations extends App {
   println(1 + 2) // 3
   println(1.+(2)) // 3
 
+  // Prefix Notation
+  val x = -1 // Unary Operators are also methods!
+  val y = 1.unary_-
+
 }
