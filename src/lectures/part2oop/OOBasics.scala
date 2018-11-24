@@ -7,6 +7,7 @@ object OOBasics extends App {
   println(person.age)
   println(person.x)
   person.greet("Mike")
+  person.greet()
 
 }
 
@@ -19,5 +20,8 @@ class Person(name: String, val age: Int) {
 
   // Adding a method. Note that "this.name" is not a field, but a parameter.
   def greet(name: String): Unit = println(s"${this.name} says: Hi, $name")
+
+  // Implied parameter.
+  def greet(): Unit = println(s"Hi, I am $name")
 
 }
