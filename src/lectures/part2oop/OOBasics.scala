@@ -35,7 +35,7 @@ class Person(name: String, val age: Int = 0) {
 class Novel(name: String, yearOfRelease: Int, author: Writer) {
 
   // Returns the age of author at yearOfRelease.
-  def authorAge(): Int = yearOfRelease - author.yearOfBirth
+  def authorAge: Int = yearOfRelease - author.yearOfBirth
 
   def isWrittenBy(author: Writer): Boolean = author == this.author
 
@@ -50,7 +50,7 @@ class Writer(firstName: String, surname: String, val yearOfBirth: Int) {
 
 // Counter Class
 class Counter(x: Int) {
-  def getCurrentCount(): Int = x
+  def getCurrentCount: Int = x
 
   def increment(): Counter = new Counter(x+1)
   def increment(n: Int) = new Counter(x+n)
