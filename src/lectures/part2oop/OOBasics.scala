@@ -6,13 +6,18 @@ object OOBasics extends App {
   val person = new Person("Rommel", 30)
   println(person.age)
   println(person.x)
+  person.greet("Mike")
 
 }
 
 // Class with constructor
 // Class parameters are not fields in Scala. Add "val" or "var" to make them also fields.
-class Person(val name: String, val age: Int) {
+class Person(name: String, val age: Int) {
   // Body
   val x = 2
   println(1 + 3)
+
+  // Adding a method. Note that "this.name" is not a field, but a parameter.
+  def greet(name: String): Unit = println(s"${this.name} says: Hi, $name")
+
 }
