@@ -64,7 +64,7 @@ class Writer(firstName: String, surname: String, val yearOfBirth: Int) {
 }
 
 // Counter Class
-class Counter(val count: Int) {
+class Counter(val count: Int = 0) {
   // def getCurrentCount: Int = x // Or you could just make "x" parameter a val.
 
   def increment = new Counter(count + 1) // immutability - EXTREMELY IMPORTANT
