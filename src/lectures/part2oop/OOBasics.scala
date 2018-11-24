@@ -24,6 +24,15 @@ object OOBasics extends App {
   println(novel.authorAge)
   println(novel.isWrittenBy(author))
 
+  val counter = new Counter
+  counter.print // 0
+  counter.increment.print // 1
+  counter.increment.print // 1
+  counter.increment.increment.print // 2
+  counter.increment(3).print // 3
+  counter.decrement.print // -1
+  counter.decrement(5).print // -5
+
 }
 
 // Class with constructor
