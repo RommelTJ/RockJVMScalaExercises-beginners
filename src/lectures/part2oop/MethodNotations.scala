@@ -2,11 +2,12 @@ package lectures.part2oop
 
 object MethodNotations extends App {
 
-  class Person(val name: String, favoriteMovie: String) {
+  class Person(val name: String, favoriteMovie: String, val age: Int = 0) {
     def likes(movie: String): Boolean = movie == favoriteMovie
     def hangOutWith(person: Person): String = s"${this.name} is hanging out with ${person.name}."
     def +(person: Person): String = s"${person.name} is hanging out with ${this.name}."
     def +(nickname: String): String = s"$name ($nickname)."
+    def unary_+ : Person = new Person(name, favoriteMovie, age + 1)
     def unary_! : String = s"$name, what the heck!?"
     def isAlive: Boolean = true
     def apply(): String = s"Hi! My name is $name and I like $favoriteMovie."
@@ -44,6 +45,8 @@ object MethodNotations extends App {
   println(mary + "the rockstar")
 
   // 2. Add age to person class with default 0 and add unary + operator => new Person with age + 1.
+  println(mary.age)
+  println((+mary).age)
 
   // 3. Add "learns" method in Person class that takes String => "Mary learns $leans". Then add learnsScala method
   // that calls learns method with "Scala". Use it in postfix notation.
