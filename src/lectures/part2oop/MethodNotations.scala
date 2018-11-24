@@ -18,4 +18,8 @@ object MethodNotations extends App {
   println(mary hangOutWith tom)
   println(mary + tom) // Scala is very permissive with method naming!
 
+  // ALL OPERATORS ARE METHODS IN SCALA.
+  println(1 + 2) // 3
+  println(1.+(2)) // 3
+
 }
