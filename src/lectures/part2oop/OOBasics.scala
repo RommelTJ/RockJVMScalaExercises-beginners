@@ -68,9 +68,17 @@ class Counter(val count: Int) {
   // def getCurrentCount: Int = x // Or you could just make "x" parameter a val.
 
   def increment = new Counter(count + 1) // immutability - EXTREMELY IMPORTANT
-  def increment(n: Int) = new Counter(count + n)
+  // def increment(n: Int) = new Counter(count + n)
+  def increment(n: Int): Counter = {
+    if (n <= 0) this
+    else increment.increment(n - 1)
+  }
 
   def decrement = new Counter(count - 1)
-  def decrement(n: Int) = new Counter(count - n)
+  // def decrement(n: Int) = new Counter(count - n)
+  def decrement(n: Int): Counter = {
+    if (n <= 0) this
+    else decrement.decrement(n - 1)
+  }
 
 }
