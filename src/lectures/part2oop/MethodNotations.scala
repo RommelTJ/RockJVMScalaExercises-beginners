@@ -8,7 +8,7 @@ object MethodNotations extends App {
     def learns(topic: String): String = s"$name learns $topic."
     def learnsScala: String = learns("Scala")
     def +(person: Person): String = s"${person.name} is hanging out with ${this.name}."
-    def +(nickname: String): String = s"$name ($nickname)."
+    def +(nickname: String): Person = new Person(s"$name ($nickname)", favoriteMovie)
     def unary_+ : Person = new Person(name, favoriteMovie, age + 1)
     def unary_! : String = s"$name, what the heck!?"
     def isAlive: Boolean = true
@@ -45,7 +45,7 @@ object MethodNotations extends App {
   println(mary()) // Equivalent to the above since compiler will delegate to the apply() method.
 
   // 1. Overload + operator and returns person + "the rockstar" => "Mary (the rockstar)".
-  println(mary + "the rockstar")
+  println((mary + "the rockstar")())
 
   // 2. Add age to person class with default 0 and add unary + operator => new Person with age + 1.
   println(mary.age)
