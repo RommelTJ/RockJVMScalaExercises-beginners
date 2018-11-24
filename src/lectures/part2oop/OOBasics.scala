@@ -81,4 +81,6 @@ class Counter(val count: Int) {
     else decrement.decrement(n - 1)
   }
 
+  def print = println(count)
+
 }
