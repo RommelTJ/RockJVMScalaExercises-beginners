@@ -5,3 +5,5 @@ object OOBasics extends App {
 
 
 }
+
+class Person
