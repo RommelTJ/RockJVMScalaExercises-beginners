@@ -8,6 +8,7 @@ object MethodNotations extends App {
     def +(person: Person): String = s"${person.name} is hanging out with ${this.name}."
     def unary_! : String = s"$name, what the heck!?"
     def isAlive: Boolean = true
+    def apply(): String = s"Hi! My name is $name and I like $favoriteMovie."
   }
 
   val mary = new Person("Mary", "Inception")
@@ -33,5 +34,9 @@ object MethodNotations extends App {
   // Postfix Notation. Only available to methods without parameters.
   println(mary.isAlive)
   println(mary isAlive) // Not used in practice since the dot notation is more clear.
+
+  // Apply.
+  println(mary.apply())
+  println(mary()) // Equivalent to the above since compiler will delegate to the apply() method.
 
 }
