@@ -47,3 +47,15 @@ class Novel(name: String, yearOfRelease: Int, author: Writer) {
 class Writer(firstName: String, surname: String, val yearOfBirth: Int) {
   def fullName(): String = s"$firstName $surname"
 }
+
+// Counter Class
+class Counter(x: Int) {
+  def getCurrentCount(): Int = x
+
+  def increment(): Counter = new Counter(x+1)
+  def increment(n: Int) = new Counter(x+n)
+
+  def decrement(): Counter = new Counter(x-1)
+  def decrement(n: Int) = new Counter(x-n)
+
+}
