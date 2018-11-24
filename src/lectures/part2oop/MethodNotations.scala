@@ -6,4 +6,7 @@ object MethodNotations extends App {
     def likes(movie: String): Boolean = movie == favoriteMovie
   }
 
+  val mary = new Person("Mary", "Inception")
+  println(mary.likes("Inception")) // prints true
+
 }
