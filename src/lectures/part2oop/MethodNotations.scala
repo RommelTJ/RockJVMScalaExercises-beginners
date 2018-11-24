@@ -13,7 +13,7 @@ object MethodNotations extends App {
     def unary_! : String = s"$name, what the heck!?"
     def isAlive: Boolean = true
     def apply(): String = s"Hi! My name is $name and I like $favoriteMovie."
-    def apply(n: Int): String = s"Mary watched $favoriteMovie $n times."
+    def apply(n: Int): String = s"$name watched $favoriteMovie $n times."
   }
 
   val mary = new Person("Mary", "Inception")
