@@ -6,7 +6,7 @@ object MethodNotations extends App {
     def likes(movie: String): Boolean = movie == favoriteMovie
     def hangOutWith(person: Person): String = s"${this.name} is hanging out with ${person.name}."
     def learns(topic: String): String = s"$name learns $topic."
-    def learnsScala: String = learns("Scala")
+    def learnsScala: String = this learns "Scala" // learns("Scala")
     def +(person: Person): String = s"${person.name} is hanging out with ${this.name}."
     def +(nickname: String): Person = new Person(s"$name ($nickname)", favoriteMovie)
     def unary_+ : Person = new Person(name, favoriteMovie, age + 1)
