@@ -18,10 +18,11 @@ class Person(name: String, val age: Int) {
   val x = 2
   println(1 + 3)
 
-  // Adding a method. Note that "this.name" is not a field, but a parameter.
-  def greet(name: String): Unit = println(s"${this.name} says: Hi, $name")
-
   // Implied parameter.
   def greet(): Unit = println(s"Hi, I am $name")
+
+  // Overloaded method.
+  // Adding a method. Note that "this.name" is not a field, but a parameter.
+  def greet(name: String): Unit = println(s"${this.name} says: Hi, $name")
 
 }
