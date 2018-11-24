@@ -9,4 +9,5 @@ object OOBasics extends App {
 }
 
 // Class with constructor
+// Class parameters are not fields in Scala.
 class Person(name: String, age: Int)
