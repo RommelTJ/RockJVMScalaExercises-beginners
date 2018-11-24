@@ -45,7 +45,7 @@ class Novel(name: String, yearOfRelease: Int, author: Writer) {
 
 // Writer Class
 class Writer(firstName: String, surname: String, val yearOfBirth: Int) {
-  def fullName(): String = s"$firstName $surname"
+  def fullName: String = s"$firstName $surname"
 }
 
 // Counter Class
