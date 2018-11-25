@@ -22,4 +22,8 @@ object Objects extends App {
   val john = Person
   println(mary == john) // Pointing to the same instance.
 
+  val michael = new Person
+  val jane = new Person
+  println(michael == jane) // Pointing to different instances.
+
 }
