@@ -25,4 +25,9 @@ object InheritanceAndTraits extends App {
   }
   class Adult(name: String, age: Int, idCard: String) extends Person(name)
 
+  // Overriding
+  class Dog extends Animal {
+    override def eat(): Unit = println("woof crunch crunch")
+  }
+
 }
