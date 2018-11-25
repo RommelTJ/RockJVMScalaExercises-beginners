@@ -3,7 +3,7 @@ package lectures.part2oop
 object InheritanceAndTraits extends App {
 
   // Single-Class Inheritance.
-  class Animal {
+  sealed class Animal {
     // Access-Modifiers: public (default), private (class only), protected (class and subclass only).
     val creatureType = "wild"
     def eat(): Unit = println("nom nom nom")
@@ -46,5 +46,10 @@ object InheritanceAndTraits extends App {
   // vs Overloading (supplying different signatures for same methods in same class)
 
   // Super
-  
+
+  // Preventing Overrides
+  // 1 - use final on member.
+  // 2 - use final on class.
+  // 3 - seal the class = extend classes in THIS FILE ONLY, but prevent extension in other files
+
 }
