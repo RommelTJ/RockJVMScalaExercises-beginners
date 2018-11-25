@@ -35,4 +35,8 @@ object AbstractDataTypes extends App {
   // 2 - You can only extend one class, but can inherit multiple traits.
   // 3 - Traits are behavior (what something does), but Abstract Class is a type of "thing".
 
+  // Scala's Type Hierarchy
+  // scala.Any <- scala.AnyRef (java.lang.Object) <- scala.Null
+  // scala.Any <- scala.AnyVal (primitives) <- scala.Nothing
+
 }
