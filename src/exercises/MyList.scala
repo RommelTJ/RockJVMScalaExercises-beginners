@@ -14,6 +14,7 @@ abstract class MyList {
   def isEmpty: Boolean
   def add(element: Int): MyList
 
+  // Polymorphic Method.
   override def toString: String = s"[$printElements]"
 
   def printElements: String
