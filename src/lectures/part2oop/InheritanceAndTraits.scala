@@ -29,5 +29,7 @@ object InheritanceAndTraits extends App {
   class Dog extends Animal {
     override def eat(): Unit = println("woof crunch crunch")
   }
+  val dog = new Dog
+  dog.eat()
 
 }
