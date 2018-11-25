@@ -29,7 +29,10 @@ object InheritanceAndTraits extends App {
   // Overriding
   class Dog(override val creatureType: String = "domestic") extends Animal {
     // override val creatureType: String = "domestic"
-    override def eat(): Unit = println("woof crunch crunch")
+    override def eat(): Unit = {
+      super.eat()
+      println("woof crunch crunch")
+    }
   }
   val dog = new Dog("K9")
   dog.eat()
@@ -42,4 +45,6 @@ object InheritanceAndTraits extends App {
   // Overriding (supplying different implementation in derived classes)
   // vs Overloading (supplying different signatures for same methods in same class)
 
+  // Super
+  
 }
