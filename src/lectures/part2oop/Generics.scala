@@ -19,5 +19,6 @@ object Generics extends App {
   object MyList {
     def empty[A]: MyList[A] = ???
   }
+  val emptyListOfIntegers = MyList.empty[Int]
 
 }
