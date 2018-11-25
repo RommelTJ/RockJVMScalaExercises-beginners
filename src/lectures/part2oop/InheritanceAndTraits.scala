@@ -39,4 +39,7 @@ object InheritanceAndTraits extends App {
   val unknownAnimal: Animal = new Dog("K9")
   unknownAnimal.eat() // Unknown Animal is of type Dog, calls eat() from Dog class
 
+  // Overriding (supplying different implementation in derived classes)
+  // vs Overloading (supplying different signatures for same methods in same class)
+
 }
