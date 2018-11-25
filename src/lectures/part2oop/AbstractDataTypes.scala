@@ -13,4 +13,9 @@ object AbstractDataTypes extends App {
     override def eat(): Unit = println("crunch crunch crunch")
   }
 
+  // Traits
+  trait Carnivore {
+    def eat(animal: Animal): Unit
+  }
+
 }
