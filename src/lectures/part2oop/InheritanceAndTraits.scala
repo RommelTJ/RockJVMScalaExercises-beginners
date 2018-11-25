@@ -4,12 +4,17 @@ object InheritanceAndTraits extends App {
 
   // Single-Class Inheritance.
   class Animal {
-    def eat(): Unit = println("nom nom nom")
+    protected def eat(): Unit = println("nom nom nom")
   }
 
-  class Cat extends Animal
+  class Cat extends Animal {
+    def crunch(): Unit = {
+      eat()
+      println("crunch crunch crunch")
+    }
+  }
 
   val cat = new Cat
-  cat.eat()
+  cat.crunch()
 
 }
