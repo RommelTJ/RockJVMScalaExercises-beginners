@@ -6,6 +6,9 @@ object Generics extends App {
   class MyList[A] {
     // Use the Type A in class defintion.
   }
-  
+
+  // Using a generic type.
+  val listOfIntegers = new MyList[Int]
+  val listOfStrings = new MyList[String]
 
 }
