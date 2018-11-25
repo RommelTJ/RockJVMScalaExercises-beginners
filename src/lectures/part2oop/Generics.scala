@@ -17,7 +17,7 @@ object Generics extends App {
   // Generic Methods
   // Objects cannot be type-parameterized
   object MyList {
-
+    def empty[A]: MyList[A] = ???
   }
 
 }
