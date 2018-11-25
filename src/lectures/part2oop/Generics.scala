@@ -36,4 +36,8 @@ object Generics extends App {
   class InvariantList[A]
   val invariantAnimalList: InvariantList[Animal] = new InvariantList[Animal]
 
+  // Contravariance = Opposite of Covariance. A more specific type receives a more generic type.
+  class Trainer[-A]
+  val trainer: Trainer[Cat] = new Trainer[Animal]
+
 }
