@@ -8,4 +8,7 @@ object InheritanceAndTraits extends App {
 
   class Cat extends Animal
 
+  val cat = new Cat
+  cat.eat()
+
 }
