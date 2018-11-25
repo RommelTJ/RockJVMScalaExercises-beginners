@@ -9,7 +9,7 @@ object Objects extends App {
     def canFly: Boolean = false
   }
 
-  class Person {
+  class Person(val name: String) {
     // instance-level functionality.
   }
   // COMPANIONS
@@ -22,8 +22,8 @@ object Objects extends App {
   val john = Person
   println(mary == john) // Pointing to the same instance.
 
-  val michael = new Person
-  val jane = new Person
+  val michael = new Person("Michael")
+  val jane = new Person("Jane")
   println(michael == jane) // Pointing to different instances.
 
 }
