@@ -54,4 +54,6 @@ object Generics extends App {
 //  class Car
 //  val newCage = new Cage(new Car)
 
+  // Exercise: Expand MyList to be Generic.
+
 }
