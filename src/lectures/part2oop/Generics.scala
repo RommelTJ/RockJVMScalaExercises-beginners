@@ -14,4 +14,10 @@ object Generics extends App {
   val listOfIntegers = new MyList[Int]
   val listOfStrings = new MyList[String]
 
+  // Generic Methods
+  // Objects cannot be type-parameterized
+  object MyList {
+
+  }
+
 }
