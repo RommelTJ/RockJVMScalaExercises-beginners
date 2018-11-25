@@ -19,13 +19,13 @@ abstract class MyList {
 }
 
 object Empty extends MyList {
-  override def head: Int = ???
-  override def tail: MyList = ???
-  override def isEmpty: Boolean = ???
-  override def add(element: Int): MyList = ???
+  override def head: Int = throw new NoSuchElementException
+  override def tail: MyList = throw new NoSuchElementException
+  override def isEmpty: Boolean = true
+  override def add(element: Int): MyList = new Cons(element, Empty)
 }
 
-class Cons(h: Int, t: Int) extends MyList {
+class Cons(h: Int, t: MyList) extends MyList {
   override def head: Int = ???
   override def tail: MyList = ???
   override def isEmpty: Boolean = ???
