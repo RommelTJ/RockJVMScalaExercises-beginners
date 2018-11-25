@@ -26,4 +26,10 @@ object Generics extends App {
   class Cat extends Animal
   class Dog extends Animal
 
+  // Covariance = List[Cat] extends List[Animal]
+  class CovariantList[+A]
+  val animal: Animal = new Cat
+  val animalList: CovariantList[Animal] = new CovariantList[Cat]
+  // animalList.add(new Dog) ??? HARD QUESTION.
+
 }
