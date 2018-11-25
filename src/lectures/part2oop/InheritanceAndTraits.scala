@@ -5,6 +5,7 @@ object InheritanceAndTraits extends App {
   // Single-Class Inheritance.
   class Animal {
     // Access-Modifiers: public (default), private (class only), protected (class and subclass only).
+    val creatureType = "wild"
     protected def eat(): Unit = println("nom nom nom")
   }
 
@@ -27,9 +28,11 @@ object InheritanceAndTraits extends App {
 
   // Overriding
   class Dog extends Animal {
+    override val creatureType: String = "domestic"
     override def eat(): Unit = println("woof crunch crunch")
   }
   val dog = new Dog
   dog.eat()
+  println(dog.creatureType)
 
 }
