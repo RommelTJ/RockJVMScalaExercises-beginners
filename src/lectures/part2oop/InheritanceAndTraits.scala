@@ -18,4 +18,8 @@ object InheritanceAndTraits extends App {
   val cat = new Cat
   cat.crunch()
 
+  // Constructors
+  class Person(name: String, age: Int)
+  
+
 }
