@@ -15,6 +15,7 @@ object AbstractDataTypes extends App {
 
   // Traits
   trait Carnivore {
+    val preferredMeal: String = "fresh meat"
     def eat(animal: Animal): Unit
   }
   trait ColdBlooded
