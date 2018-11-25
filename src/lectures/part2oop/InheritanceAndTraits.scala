@@ -6,4 +6,6 @@ object InheritanceAndTraits extends App {
     def eat(): Unit = println("nom nom nom")
   }
 
+  class Cat extends Animal
+
 }
