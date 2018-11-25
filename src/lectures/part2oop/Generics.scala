@@ -43,4 +43,9 @@ object Generics extends App {
   // Bounded Types
   class Cage[A <: Animal](animal: A) // Type A only accepts subtypes of type Animal.
   val cage = new Cage(new Dog)
+
+  // This won't work because of the bounded type.
+//  class Car
+//  val newCage = new Cage(new Car)
+
 }
