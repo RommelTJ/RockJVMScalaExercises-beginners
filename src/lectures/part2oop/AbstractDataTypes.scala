@@ -30,4 +30,9 @@ object AbstractDataTypes extends App {
   val croc = new Crocodile
   croc.eat(dog)
 
+  // Traits vs Abstract Classes
+  // 1 - Traits do not have constructor parameters.
+  // 2 - You can only extend one class, but can inherit multiple traits.
+  // 3 - Traits are behavior (what something does), but Abstract Class is a type of "thing".
+
 }
