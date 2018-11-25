@@ -20,6 +20,6 @@ object InheritanceAndTraits extends App {
 
   // Constructors
   class Person(name: String, age: Int)
-  
+  class Adult(name: String, age: Int, idCard: String) extends Person(name, age)
 
 }
