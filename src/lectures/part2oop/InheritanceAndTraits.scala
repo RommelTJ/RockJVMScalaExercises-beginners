@@ -19,7 +19,10 @@ object InheritanceAndTraits extends App {
   cat.crunch()
 
   // Constructors
-  class Person(name: String, age: Int)
-  class Adult(name: String, age: Int, idCard: String) extends Person(name, age)
+  class Person(name: String, age: Int) {
+    // Auxiliary Constructor
+    def this(name: String) = this(name, 0)
+  }
+  class Adult(name: String, age: Int, idCard: String) extends Person(name)
 
 }
