@@ -21,4 +21,9 @@ object Generics extends App {
   }
   val emptyListOfIntegers = MyList.empty[Int]
 
+  // Variance Problem.
+  class Animal
+  class Cat extends Animal
+  class Dog extends Animal
+
 }
