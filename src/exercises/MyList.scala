@@ -9,6 +9,11 @@ package exercises
   */
 abstract class MyList {
 
-  
+  def head: Int
+  def tail: MyList
+  def isEmpty: Boolean
+  def add(element: Int): MyList
+
+  override def toString: String = super.toString
 
 }
