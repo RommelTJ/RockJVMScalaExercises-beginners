@@ -32,4 +32,8 @@ object Objects extends App {
 
   val bobbie = Person(michael, jane) // Using the apply method.
 
+  // Scala Applications = Scala object with a main method.
+  // def main(args: Array[String]): Unit
+
+
 }
