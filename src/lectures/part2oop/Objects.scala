@@ -9,7 +9,7 @@ object Objects extends App {
     def canFly: Boolean = false
 
     // Factory Method
-    def from(mother: Person, father: Person): Person = new Person("Bobbie")
+    def apply(mother: Person, father: Person): Person = new Person("Bobbie")
 
   }
 
@@ -29,5 +29,7 @@ object Objects extends App {
   val michael = new Person("Michael")
   val jane = new Person("Jane")
   println(michael == jane) // Pointing to different instances.
+
+  val bobbie = Person(michael, jane) // Using the apply method.
 
 }
