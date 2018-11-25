@@ -4,7 +4,7 @@ object AbstractDataTypes extends App {
 
   // Abstract classes - cannot be instantiated.
   abstract class Animal {
-    val creatureType: String
+    val creatureType: String = "wild"
     def eat(): Unit
   }
 
