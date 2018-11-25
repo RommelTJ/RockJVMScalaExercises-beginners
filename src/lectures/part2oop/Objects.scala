@@ -7,6 +7,10 @@ object Objects extends App {
     // "static"/"class"-level functionality.
     val N_EYES = 2
     def canFly: Boolean = false
+
+    // Factory Method
+    def from(mother: Person, father: Person): Person = new Person("Bobbie")
+
   }
 
   class Person(val name: String) {
