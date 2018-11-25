@@ -4,6 +4,7 @@ object InheritanceAndTraits extends App {
 
   // Single-Class Inheritance.
   class Animal {
+    // Access-Modifiers: public (default), private (class only), protected (class and subclass only).
     protected def eat(): Unit = println("nom nom nom")
   }
 
