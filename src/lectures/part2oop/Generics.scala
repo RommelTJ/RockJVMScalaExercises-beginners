@@ -40,4 +40,7 @@ object Generics extends App {
   class Trainer[-A]
   val trainer: Trainer[Cat] = new Trainer[Animal]
 
+  // Bounded Types
+  class Cage[A <: Animal](animal: A) // Type A only accepts subtypes of type Animal.
+  val cage = new Cage(new Dog)
 }
