@@ -24,3 +24,10 @@ object Empty extends MyList {
   override def isEmpty: Boolean = ???
   override def add(element: Int): MyList = ???
 }
+
+class Cons(h: Int, t: Int) extends MyList {
+  override def head: Int = ???
+  override def tail: MyList = ???
+  override def isEmpty: Boolean = ???
+  override def add(element: Int): MyList = ???
+}
