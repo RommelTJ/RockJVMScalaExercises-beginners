@@ -3,8 +3,12 @@ package lectures.part2oop
 object Generics extends App {
 
   // Generic Type
-  class MyList[A] {
+  class MyList[+A] {
     // Use the Type A in class definition.
+    def add[B >: A](element: B): MyList[B] = ???
+    // A == Cat
+    // B == Dog == Animal
+    // If we get a Dog in a List of Cats, we return a List of Animals.
   }
 
   // Class with multiple Generic Type parameters.
@@ -30,7 +34,7 @@ object Generics extends App {
   class CovariantList[+A]
   val animal: Animal = new Cat
   val animalList: CovariantList[Animal] = new CovariantList[Cat]
-  // animalList.add(new Dog) ??? HARD QUESTION.
+  // animalList.add(new Dog) ??? HARD QUESTION => We return a list of Animals
 
   // Invariance = List[Cat] and List[Animal] are two separate things.
   class InvariantList[A]
