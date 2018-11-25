@@ -31,3 +31,10 @@ class Cons(h: Int, t: MyList) extends MyList {
   override def isEmpty: Boolean = false
   override def add(element: Int): MyList = new Cons(element, this)
 }
+
+object ListTest extends App {
+  val list = new Cons(1, new Cons(2, new Cons(3, Empty)))
+  println(list.tail.head)
+  println(list.add(4).head)
+  println(list.isEmpty)
+}
