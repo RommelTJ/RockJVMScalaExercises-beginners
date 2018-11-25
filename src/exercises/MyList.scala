@@ -26,8 +26,8 @@ object Empty extends MyList {
 }
 
 class Cons(h: Int, t: MyList) extends MyList {
-  override def head: Int = ???
-  override def tail: MyList = ???
-  override def isEmpty: Boolean = ???
-  override def add(element: Int): MyList = ???
+  override def head: Int = h
+  override def tail: MyList = t
+  override def isEmpty: Boolean = false
+  override def add(element: Int): MyList = new Cons(element, this)
 }
