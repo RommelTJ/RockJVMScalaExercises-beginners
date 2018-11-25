@@ -17,3 +17,10 @@ abstract class MyList {
   override def toString: String = super.toString
 
 }
+
+object Empty extends MyList {
+  override def head: Int = ???
+  override def tail: MyList = ???
+  override def isEmpty: Boolean = ???
+  override def add(element: Int): MyList = ???
+}
