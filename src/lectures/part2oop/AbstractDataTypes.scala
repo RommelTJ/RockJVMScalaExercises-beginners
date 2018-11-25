@@ -18,4 +18,10 @@ object AbstractDataTypes extends App {
     def eat(animal: Animal): Unit
   }
 
+  class Crocodile extends Animal with Carnivore {
+    override val creatureType: String = "Lizard"
+    override def eat(): Unit = println("chomp chomp chomp")
+    def eat(animal: Animal): Unit = s"I'm a croc and I'm eating ${animal.creatureType}."
+  }
+
 }
