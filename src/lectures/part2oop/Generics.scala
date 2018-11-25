@@ -7,6 +7,8 @@ object Generics extends App {
     // Use the Type A in class defintion.
   }
 
+  class MyMap[Key, Value]
+
   // Using a generic type.
   val listOfIntegers = new MyList[Int]
   val listOfStrings = new MyList[String]
