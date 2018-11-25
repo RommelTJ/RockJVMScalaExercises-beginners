@@ -6,7 +6,7 @@ object InheritanceAndTraits extends App {
   class Animal {
     // Access-Modifiers: public (default), private (class only), protected (class and subclass only).
     val creatureType = "wild"
-    protected def eat(): Unit = println("nom nom nom")
+    def eat(): Unit = println("nom nom nom")
   }
 
   class Cat extends Animal {
@@ -34,5 +34,9 @@ object InheritanceAndTraits extends App {
   val dog = new Dog("K9")
   dog.eat()
   println(dog.creatureType)
+
+  // Type Substitution (aka polymorphism)
+  val unknownAnimal: Animal = new Dog("K9")
+  unknownAnimal.eat() // Unknown Animal is of type Dog, calls eat() from Dog class
 
 }
