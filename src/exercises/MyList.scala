@@ -89,9 +89,7 @@ object ListTest extends App {
 
   println(listOfIntegers.map((element: Int) => element * 2).toString) // Prints [2 4 6]
 
-  println(listOfIntegers.filter(new MyPredicate[Int] {
-    override def test(element: Int): Boolean = element % 2 == 0
-  }).toString) // Prints [2]
+  println(listOfIntegers.filter((element: Int) => element % 2 == 0).toString) // Prints [2]
 
   println((listOfIntegers ++ anotherListOfIntegers).toString) // [1 2 3 1 4 5]
   println(listOfIntegers.flatMap(new MyTransformer[Int, MyList[Int]] {
