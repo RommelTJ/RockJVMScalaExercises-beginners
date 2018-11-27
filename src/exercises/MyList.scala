@@ -23,6 +23,9 @@ abstract class MyList[+A] {
   def flatMap[B](transformer: MyTransformer[A, MyList[B]]): MyList[B]
   def filter(predicate: MyPredicate[A]): MyList[A]
 
+  // Concatenation
+  def ++[B >: A](list: MyList[B]): MyList[B]
+
 }
 
 object Empty extends MyList[Nothing] {
