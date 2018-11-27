@@ -81,4 +81,8 @@ object ListTest extends App {
     override def transform(element: Int): Int = element * 2
   }).toString) // Prints [2 4 6]
 
+  println(listOfIntegers.filter(new MyPredicate[Int] {
+    override def test(element: Int): Boolean = element % 2 == 0
+  }).toString) // Prints [2]
+
 }
