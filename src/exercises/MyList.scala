@@ -76,4 +76,9 @@ object ListTest extends App {
   val listOfStrings: MyList[String] = new Cons("Hello", new Cons("Scala", Empty))
   println(listOfIntegers.toString)
   println(listOfStrings.toString)
+
+  println(listOfIntegers.map(new MyTransformer[Int, Int] {
+    override def transform(element: Int): Int = element * 2
+  }).toString) // Prints [2 4 6]
+
 }
