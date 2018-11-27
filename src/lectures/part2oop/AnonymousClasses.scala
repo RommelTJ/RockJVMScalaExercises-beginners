@@ -11,4 +11,8 @@ object AnonymousClasses extends App {
   println(funnyAnimal.getClass)
   println(funnyAnimal.eat())
 
+  class Person(name: String) {
+    def sayHi(): Unit = println(s"Hi, my name is $name, how can I help?")
+  }
+
 }
