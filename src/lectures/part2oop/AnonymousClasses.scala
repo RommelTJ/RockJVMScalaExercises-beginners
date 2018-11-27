@@ -6,4 +6,9 @@ object AnonymousClasses extends App {
     def eat(): Unit
   }
 
+  // Creating an Anonymous Class.
+  val funnyAnimal: Animal = () => println("hahahaha")
+  println(funnyAnimal.getClass)
+  println(funnyAnimal.eat())
+
 }
