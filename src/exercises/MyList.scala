@@ -20,6 +20,7 @@ abstract class MyList[+A] {
   def printElements: String
 
   def map[B](transformer: MyTransformer[A, B]): MyList[B]
+  def flatMap[B](transformer: MyTransformer[A, MyList[B]]): MyList[B]
 
 }
 
