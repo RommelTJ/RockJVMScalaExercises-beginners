@@ -82,6 +82,7 @@ trait MyTransformer[-A, B] {
 
 object ListTest extends App {
   val listOfIntegers: MyList[Int] = new Cons(1, new Cons(2, new Cons(3, Empty)))
+  val anotherListOfIntegers: MyList[Int] = new Cons(1, new Cons(4, new Cons(5, Empty)))
   val listOfStrings: MyList[String] = new Cons("Hello", new Cons("Scala", Empty))
   println(listOfIntegers.toString)
   println(listOfStrings.toString)
