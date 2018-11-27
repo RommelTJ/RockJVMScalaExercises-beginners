@@ -51,10 +51,11 @@ class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   }
 
   override def map[B](transformer: MyTransformer[A, B]): MyList[B] = ???
-
   override def flatMap[B](transformer: MyTransformer[A, MyList[B]]): MyList[B] = ???
-
-  override def filter(predicate: MyPredicate[A]): MyList[A] = ???
+  override def filter(predicate: MyPredicate[A]): MyList[A] = {
+    if (predicate.test(h)) new Cons(h, t.filter(predicate))
+    else t.filter(predicate)
+  }
 
 }
 
