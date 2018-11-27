@@ -40,6 +40,8 @@ object Empty extends MyList[Nothing] {
   override def flatMap[B](transformer: MyTransformer[Nothing, MyList[B]]): MyList[B] = Empty
   override def filter(predicate: MyPredicate[Nothing]): MyList[Nothing] = Empty
 
+  override def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
+  
 }
 
 class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
