@@ -59,7 +59,9 @@ class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
     new Cons(transformer.transform(h), t.map(transformer))
   }
 
-  override def flatMap[B](transformer: MyTransformer[A, MyList[B]]): MyList[B] = ???
+  override def flatMap[B](transformer: MyTransformer[A, MyList[B]]): MyList[B] = {
+    transformer.transform(h) ++ t.flatMap(transformer)
+  }
 
   override def filter(predicate: MyPredicate[A]): MyList[A] = {
     if (predicate.test(h)) new Cons(h, t.filter(predicate))
@@ -67,7 +69,7 @@ class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   }
 
   override def ++[B >: A](list: MyList[B]): MyList[B] = new Cons(h, t ++ list)
-  
+
 }
 
 trait MyPredicate[-T] {
