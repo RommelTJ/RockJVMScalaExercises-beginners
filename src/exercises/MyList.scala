@@ -41,7 +41,7 @@ object Empty extends MyList[Nothing] {
   override def filter(predicate: MyPredicate[Nothing]): MyList[Nothing] = Empty
 
   override def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
-  
+
 }
 
 class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
@@ -66,6 +66,8 @@ class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
     else t.filter(predicate)
   }
 
+  override def ++[B >: A](list: MyList[B]): MyList[B] = new Cons(h, t ++ list)
+  
 }
 
 trait MyPredicate[-T] {
