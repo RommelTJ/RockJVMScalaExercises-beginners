@@ -95,4 +95,6 @@ object ListTest extends App {
     override def test(element: Int): Boolean = element % 2 == 0
   }).toString) // Prints [2]
 
+  println((listOfIntegers ++ anotherListOfIntegers).toString) // [1 2 3 1 4 5]
+
 }
