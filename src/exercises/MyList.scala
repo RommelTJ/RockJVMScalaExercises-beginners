@@ -19,6 +19,8 @@ abstract class MyList[+A] {
 
   def printElements: String
 
+  def map[B](transformer: MyTransformer[A, B]): MyList[B]
+
 }
 
 object Empty extends MyList[Nothing] {
