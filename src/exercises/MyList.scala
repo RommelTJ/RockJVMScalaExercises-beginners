@@ -76,7 +76,7 @@ trait MyPredicate[-T] {
   def test(element: T): Boolean
 }
 
-trait MyTransformer[-A, B] {
+trait MyTransformer[-A, +B] {
   def transform(element: A): B
 }
 
@@ -92,8 +92,6 @@ object ListTest extends App {
   println(listOfIntegers.filter((element: Int) => element % 2 == 0).toString) // Prints [2]
 
   println((listOfIntegers ++ anotherListOfIntegers).toString) // [1 2 3 1 4 5]
-  println(listOfIntegers.flatMap(new MyTransformer[Int, MyList[Int]] {
-    override def transform(element: Int): MyList[Int] = new Cons(element, new Cons(element + 1, Empty))
-  }).toString) // Prints [1 2 2 3 3 4]
+  println(listOfIntegers.flatMap((element: Int) => new Cons(element, new Cons(element + 1, Empty))).toString) // Prints [1 2 2 3 3 4]
 
 }
