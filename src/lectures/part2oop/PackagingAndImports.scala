@@ -11,4 +11,7 @@ object PackagingAndImports extends App {
   // val princess = new playground.Cinderella // fully-qualified class name.
   val princess = new Cinderella
 
+  // Packages are in a hierarchy.
+  // Matching folder structure.
+
 }
