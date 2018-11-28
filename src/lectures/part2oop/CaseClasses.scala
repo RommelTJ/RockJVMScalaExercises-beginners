@@ -35,4 +35,9 @@ object CaseClasses extends App {
 
   // 7 - Case Classes have extractor patterns = Can be used in PATTERN MATCHING.
 
+  // You can also have case objects.
+  case object UnitedKingdom {
+    def name: String = "The UK of GB and NI"
+  }
+
 }
