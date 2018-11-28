@@ -15,4 +15,9 @@ object CaseClasses extends App {
   println(jim.toString)
   println(jim)
 
+  // 3 - Equals and HashCode are implemented.
+  val jim2 = new Person("Jim", 34)
+  println(jim == jim2) // true, preferred way
+  println(jim.equals(jim2)) // true
+  
 }
