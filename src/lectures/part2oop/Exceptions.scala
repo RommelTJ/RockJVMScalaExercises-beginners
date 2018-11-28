@@ -42,6 +42,9 @@ object Exceptions extends App {
   // throw exception
 
   // Ex 1. Crashing with OutOfMemoryError.
-  throw new OutOfMemoryError()
+  // throw new OutOfMemoryError()
+
+  // Ex 2. Crashing with StackOverflowError.
+  throw new StackOverflowError()
 
 }
