@@ -24,4 +24,10 @@ object CaseClasses extends App {
   val jim3 = jim.copy(age = 45)
   println(jim3)
 
+  // 5 - Case Classes have companion objects.
+  val thePerson = Person
+  println(thePerson)
+  val mary = Person("Mary", 23) // Companion object's apply() does the same thing as the constructor, thus you don't need 'new'.
+  println(mary)
+
 }
