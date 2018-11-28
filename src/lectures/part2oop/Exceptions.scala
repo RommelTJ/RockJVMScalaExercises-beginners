@@ -20,4 +20,13 @@ object Exceptions extends App {
     else 42
   }
 
+  try {
+    getInt(true)
+  } catch {
+    case rte: RuntimeException => println("Caught a RuntimeException")
+  } finally {
+    // Code that will get executed no matter what.
+    println("finally")
+  }
+
 }
