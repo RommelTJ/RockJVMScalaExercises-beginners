@@ -54,6 +54,7 @@ object Exceptions extends App {
 
   class OverflowException extends RuntimeException
   class UnderflowException extends RuntimeException
+  class MathCalculationException extends RuntimeException("Division by zero")
 
   case object PocketCalculator {
     def add(x: Int, y: Int): Int = {
@@ -76,10 +77,15 @@ object Exceptions extends App {
       else if (x < 0 && y > 0 && result > 0) throw new UnderflowException
       else result
     }
-    def divide(x: Int, y: Int): Int = x / y
+    def divide(x: Int, y: Int): Int = {
+      if (y == 0) throw new MathCalculationException
+      x / y
+    }
   }
 
   // println(PocketCalculator.add(Int.MaxValue, 10))
-  println(PocketCalculator.subtract(-1, Int.MaxValue))
+  // println(PocketCalculator.subtract(-1, Int.MaxValue))
+  // println(PocketCalculator.divide(3, 0))
+  println(PocketCalculator.divide(3, 2))
 
 }
