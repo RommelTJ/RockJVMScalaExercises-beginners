@@ -35,4 +35,10 @@ object Exceptions extends App {
   // Int and Unit means the compiler will infer an AnyVal
   // Int and Int means the compiler will infer an Int
 
+  // 3 - Defining your own Exceptions.
+
+  class MyException extends Exception
+  val exception = new MyException
+  throw exception
+
 }
