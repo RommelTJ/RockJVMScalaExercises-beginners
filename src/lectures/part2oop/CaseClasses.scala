@@ -13,5 +13,6 @@ object CaseClasses extends App {
 
   // 2 - A sensible toString.
   println(jim.toString)
+  println(jim)
 
 }
