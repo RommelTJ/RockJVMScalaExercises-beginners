@@ -33,4 +33,6 @@ object CaseClasses extends App {
   // 6 - Case Classes are serializable.
   // Akka - deals with sending serializable messages through the network.
 
+  // 7 - Case Classes have extractor patterns = Can be used in PATTERN MATCHING.
+
 }
