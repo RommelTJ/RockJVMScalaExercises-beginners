@@ -51,11 +51,22 @@ object Exceptions extends App {
   // val noLimit = infinite
 
   // Ex 3. PocketCalculator
+
+  class OverflowException extends RuntimeException
+  class UnderflowException extends RuntimeException
+
   case object PocketCalculator {
-    def add(x: Int, y: Int): Int = x + y
+    def add(x: Int, y: Int): Int = {
+      val result = x + y
+      if (x > 0 && y > 0 && result < 0) throw new OverflowException
+      else if (x < 0 && y < 0 && result > 0) throw new UnderflowException
+      else result
+    }
     def subtract(x: Int, y: Int): Int = x - y
     def multiply(x: Int, y: Int): Int = x * y
     def divide(x: Int, y: Int): Int = x / y
   }
+
+  println(PocketCalculator.add(Int.MaxValue, 10))
 
 }
