@@ -1,6 +1,7 @@
 package lectures.part2oop
 
-import playground.Cinderella
+import playground.{Cinderella => Princess, PrinceCharming => Wut}
+// import playground._
 
 object PackagingAndImports extends App {
 
@@ -9,7 +10,7 @@ object PackagingAndImports extends App {
 
   // import the package.
   // val princess = new playground.Cinderella // fully-qualified class name.
-  val princess = new Cinderella
+  val princess = new Princess
 
   // Packages are in a hierarchy.
   // Matching folder structure.
@@ -17,5 +18,8 @@ object PackagingAndImports extends App {
   // Package Object
   sayHello()
   println(SPEED_OF_LIGHT)
+
+  // Imports
+  val prince = new Wut
 
 }
