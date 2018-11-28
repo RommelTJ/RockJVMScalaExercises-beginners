@@ -47,4 +47,12 @@ object Exceptions extends App {
   // Ex 2. Crashing with StackOverflowError.
   throw new StackOverflowError()
 
+  // Ex 3. PocketCalculator
+  case object PocketCalculator {
+    def add(x: Int, y: Int): Int = x + y
+    def subtract(x: Int, y: Int): Int = x - y
+    def multiply(x: Int, y: Int): Int = x * y
+    def divide(x: Int, y: Int): Int = x / y
+  }
+
 }
