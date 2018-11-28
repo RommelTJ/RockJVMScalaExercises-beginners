@@ -43,6 +43,7 @@ object Exceptions extends App {
 
   // Ex 1. Crashing with OutOfMemoryError.
   // throw new OutOfMemoryError()
+  // val array = Array.ofDim(Int.MaxValue)
 
   // Ex 2. Crashing with StackOverflowError.
   throw new StackOverflowError()
