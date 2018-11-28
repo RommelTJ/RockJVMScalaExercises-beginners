@@ -14,4 +14,6 @@ object PackagingAndImports extends App {
   // Packages are in a hierarchy.
   // Matching folder structure.
 
+  // Package Object
+
 }
