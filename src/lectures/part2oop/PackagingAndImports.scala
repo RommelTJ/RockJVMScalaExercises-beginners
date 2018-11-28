@@ -15,5 +15,7 @@ object PackagingAndImports extends App {
   // Matching folder structure.
 
   // Package Object
+  sayHello()
+  println(SPEED_OF_LIGHT)
 
 }
