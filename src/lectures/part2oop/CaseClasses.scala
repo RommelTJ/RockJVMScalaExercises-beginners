@@ -11,4 +11,7 @@ object CaseClasses extends App {
   val jim = new Person("Jim", 34)
   println(jim.name)
 
+  // 2 - A sensible toString.
+  println(jim.toString)
+
 }
