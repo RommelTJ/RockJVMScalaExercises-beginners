@@ -20,13 +20,17 @@ object Exceptions extends App {
     else 42
   }
 
-  try {
-    getInt(true)
+  val potentialFail = try {
+    getInt(true) // Int
   } catch {
-    case rte: RuntimeException => println("Caught a RuntimeException")
+    case npe: NullPointerException => println("Caught a NullPointerException") // Unit
+    case rte: RuntimeException => println("Caught a RuntimeException") // Unit
   } finally {
     // Code that will get executed no matter what.
     println("finally")
   }
+
+  // Int and Unit means the compiler will infer an AnyVal
+  // Int and Int means the compiler will infer an Int
 
 }
