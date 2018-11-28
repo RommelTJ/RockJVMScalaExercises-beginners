@@ -27,6 +27,8 @@ object Exceptions extends App {
     case rte: RuntimeException => println("Caught a RuntimeException") // Unit
   } finally {
     // Code that will get executed no matter what.
+    // Optional. Does not influence the return type of this expression.
+    // Use finally only for side-effects.
     println("finally")
   }
 
