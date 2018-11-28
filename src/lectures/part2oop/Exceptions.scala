@@ -7,9 +7,17 @@ object Exceptions extends App {
 
   // throwing and catching exceptions.
 
-  val aWeirdValue: String = throw new NullPointerException // Nothing.
+  // 1 - Throwing.
+  // val aWeirdValue: String = throw new NullPointerException // Nothing.
 
   // throwable classes extend the Throwable class.
   // Exception and Error are the major Throwable subtypes.
+
+  // 2 - Catching.
+
+  def getInt(withException: Boolean): Int = {
+    if (withException) throw new RuntimeException("No Int for you!")
+    else 42
+  }
 
 }
