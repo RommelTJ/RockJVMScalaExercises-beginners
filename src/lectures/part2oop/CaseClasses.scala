@@ -20,4 +20,8 @@ object CaseClasses extends App {
   println(jim == jim2) // true, preferred way
   println(jim.equals(jim2)) // true
 
+  // 4 - Case Classes have a handy copy method.
+  val jim3 = jim.copy(age = 45)
+  println(jim3)
+
 }
