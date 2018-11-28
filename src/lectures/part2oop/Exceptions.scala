@@ -46,7 +46,9 @@ object Exceptions extends App {
   // val array = Array.ofDim(Int.MaxValue)
 
   // Ex 2. Crashing with StackOverflowError.
-  throw new StackOverflowError()
+  // throw new StackOverflowError()
+  // def infinite: Int = 1 + infinite
+  // val noLimit = infinite
 
   // Ex 3. PocketCalculator
   case object PocketCalculator {
