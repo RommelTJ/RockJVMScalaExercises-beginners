@@ -3,6 +3,9 @@ package lectures.part2oop
 import playground.{Cinderella => Princess, PrinceCharming => Wut}
 // import playground._
 
+import java.util.{Date => JavaDate}
+import java.sql.{Date => SQLDate}
+
 object PackagingAndImports extends App {
 
   // Package members are accessible by their simple name.
@@ -21,5 +24,8 @@ object PackagingAndImports extends App {
 
   // Imports
   val prince = new Wut
+
+  val javaDate = new JavaDate
+  val sqlDate = new SQLDate(2018, 5, 4)
 
 }
