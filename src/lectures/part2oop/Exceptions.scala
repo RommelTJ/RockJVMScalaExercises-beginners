@@ -39,6 +39,9 @@ object Exceptions extends App {
 
   class MyException extends Exception
   val exception = new MyException
-  throw exception
+  // throw exception
+
+  // Ex 1. Crashing with OutOfMemoryError.
+  throw new OutOfMemoryError()
 
 }
