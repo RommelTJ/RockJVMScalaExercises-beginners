@@ -28,4 +28,9 @@ object PackagingAndImports extends App {
   val javaDate = new JavaDate
   val sqlDate = new SQLDate(2018, 5, 4)
 
+  // Default Imports
+  // java.lang - String, Object, Exception
+  // scala - Int, Nothing, Function
+  // scala.Predef - println, ???
+
 }
