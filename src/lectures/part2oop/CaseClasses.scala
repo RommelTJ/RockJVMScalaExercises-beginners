@@ -30,4 +30,7 @@ object CaseClasses extends App {
   val mary = Person("Mary", 23) // Companion object's apply() does the same thing as the constructor, thus you don't need 'new'.
   println(mary)
 
+  // 6 - Case Classes are serializable.
+  // Akka - deals with sending serializable messages through the network.
+
 }
