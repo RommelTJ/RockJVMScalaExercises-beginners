@@ -31,6 +31,9 @@ class Mkdir(name: String) extends Command {
     // 2. Create a new directory entry in the wd.
     val newDir = Directory.empty(wd.path, name)
 
+    // 3. Updating the whole directory structure starting from the root. (IMMUTABLE)
+    val newRoot = updateStructure(state.root, allDirsInPath, newDir)
+
   }
 
 }
