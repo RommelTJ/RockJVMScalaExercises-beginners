@@ -1,5 +1,5 @@
 package com.rommelrico.filesystem.files
 
-class Directory {
+class Directory extends DirEntry {
 
 }
