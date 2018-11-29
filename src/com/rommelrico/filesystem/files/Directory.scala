@@ -9,7 +9,7 @@ class Directory(override val parentPath: String,
   def hasEntry(name: String): Boolean = findEntry(name) != null
 
   def getAllFoldersInPath: List[String] = {
-    path.substring(1).split(Directory.SEPARATOR).toList
+    path.substring(1).split(Directory.SEPARATOR).toList.filter(e => !e.isEmpty)
   }
 
   def findDescendant(path: List[String]): Directory = {
