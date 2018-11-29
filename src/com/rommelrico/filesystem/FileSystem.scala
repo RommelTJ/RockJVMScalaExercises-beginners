@@ -7,7 +7,7 @@ object FileSystem extends App {
   val scanner = new Scanner(System.in)
 
   while(true) {
-    println("$")
+    print("$")
     println(scanner.nextLine())
   }
 
