@@ -28,6 +28,9 @@ class Mkdir(name: String) extends Command {
     // 1. Getting all the directories in the full Path.
     val allDirsInPath = wd.getAllFoldersInPath
 
+    // 2. Create a new directory entry in the wd.
+    val newDir = Directory.empty(wd.path, name)
+
   }
 
 }
