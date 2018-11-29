@@ -31,7 +31,8 @@ class Directory(override val parentPath: String,
     findEntryHelper(entryName, contents)
   }
 
-  def replaceEntry(entryName: String, newEntry: DirEntry): Directory = ???
+  def replaceEntry(entryName: String, newEntry: DirEntry): Directory =
+    new Directory(parentPath, name, contents.filter(e => !e.name.equals(entryName)) :+ newEntry)
 
   override def asDirectory: Directory = this
 
