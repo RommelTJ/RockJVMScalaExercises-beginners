@@ -6,7 +6,7 @@ class Directory(override val parentPath: String,
                 override val name: String,
                 val contents: List[DirEntry]) extends DirEntry(parentPath, name) {
 
-  def hasEntry(name: String): Boolean = ???
+  def hasEntry(name: String): Boolean = findEntry(name) != null
 
   def getAllFoldersInPath: List[String] = {
     path.substring(1).split(Directory.SEPARATOR).toList
