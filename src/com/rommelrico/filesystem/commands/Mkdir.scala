@@ -1,6 +1,6 @@
 package com.rommelrico.filesystem.commands
 import com.rommelrico.filesystem.State
-import com.rommelrico.filesystem.files.Directory
+import com.rommelrico.filesystem.files.{DirEntry, Directory}
 
 class Mkdir(name: String) extends Command {
 
@@ -22,6 +22,9 @@ class Mkdir(name: String) extends Command {
   }
 
   def doMkdir(name: String, state: State): State = {
+
+    def updateStructure(currentDirectory: Directory, path: List[String], newEntry: DirEntry): Directory = ???
+
     val wd = state.wd
     val fullPath = wd.path
 
