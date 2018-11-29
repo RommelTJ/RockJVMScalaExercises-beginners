@@ -1,5 +1,7 @@
 package com.rommelrico.filesystem.files
 
+import scala.annotation.tailrec
+
 class Directory(override val parentPath: String,
                 override val name: String,
                 val contents: List[DirEntry]) extends DirEntry(parentPath, name) {
@@ -14,7 +16,17 @@ class Directory(override val parentPath: String,
 
   def addEntry(newEntry: DirEntry): Directory = ???
 
-  def findEntry(entryName: String): DirEntry = ???
+  def findEntry(entryName: String): DirEntry = {
+
+    @tailrec
+    def findEntryHelper(name: String, contentList: List[DirEntry]): DirEntry = {
+      if (contentList.isEmpty) null
+      else if (contentList.head.name.equals(name)) contentList.head
+      else findEntryHelper(name, contentList.tail)
+    }
+
+    findEntryHelper(entryName, contents)
+  }
 
   def replaceEntry(entryName: String, newEntry: DirEntry): Directory = ???
 
