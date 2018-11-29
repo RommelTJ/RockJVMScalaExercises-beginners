@@ -10,5 +10,5 @@ object State {
   val SHELL_TOKEN = "$ "
 
   def apply(root: Directory, wd: Directory, output: String = ""): State = new State(root, wd, output)
-  
+
 }
