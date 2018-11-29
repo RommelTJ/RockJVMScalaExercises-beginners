@@ -34,6 +34,11 @@ class Mkdir(name: String) extends Command {
     // 3. Updating the whole directory structure starting from the root. (IMMUTABLE)
     val newRoot = updateStructure(state.root, allDirsInPath, newDir)
 
+    // 4. Find new working directory INSTANCE given wd's full path, in the new directory structure.
+    val newWd = newRoot.findDescendant(allDirsInPath)
+
+    State(newRoot, newWd)
+
   }
 
 }
