@@ -21,6 +21,13 @@ class Mkdir(name: String) extends Command {
     name.contains(".")
   }
 
-  def doMkdir(name: String, state: State): State = ???
+  def doMkdir(name: String, state: State): State = {
+    val wd = state.wd
+    val fullPath = wd.path
+
+    // 1. Getting all the directories in the full Path.
+    val allDirsInPath = wd.getAllFoldersInPath
+
+  }
 
 }

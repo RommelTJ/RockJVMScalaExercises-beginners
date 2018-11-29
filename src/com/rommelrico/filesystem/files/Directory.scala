@@ -6,6 +6,8 @@ class Directory(override val parentPath: String,
 
   def hasEntry(name: String): Boolean = ???
 
+  def getAllFoldersInPath: List[String] = ???
+
 }
 
 object Directory {
