@@ -8,6 +8,8 @@ class Directory(override val parentPath: String,
 
   def getAllFoldersInPath: List[String] = ???
 
+  def findDescendant(path: List[String]): Directory = ???
+
 }
 
 object Directory {
