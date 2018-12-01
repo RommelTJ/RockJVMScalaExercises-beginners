@@ -40,7 +40,16 @@ class Cd(dir: String) extends Command {
       }
     }
 
-    def collapseRelativeTokens(path: List[String], result: List[String]): List[String] = ???
+    @tailrec
+    def collapseRelativeTokens(path: List[String], result: List[String]): List[String] = {
+      if (path.isEmpty) result
+      else if (".".equals(path.head)) collapseRelativeTokens(path.tail, result)
+      else if ("..".equals(path.head)) {
+        if (result.isEmpty) null
+        else collapseRelativeTokens(path.tail, result.tail)
+      }
+      else collapseRelativeTokens(path.tail, result :+ path.head)
+    }
 
     // 1 - Get the tokens.
     val tokens: List[String] = path.substring(1).split(Directory.SEPARATOR).toList
