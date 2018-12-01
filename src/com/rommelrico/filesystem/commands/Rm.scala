@@ -38,7 +38,7 @@ class Rm(name: String) extends Command {
 
     // 4 - Get or find the entry to remove and update structure like we do for mkdir.
     val tokens = path.substring(1).split(Directory.SEPARATOR).toList
-    val newRoot: Directory = rmHelper(state.root, path)
+    val newRoot: Directory = rmHelper(state.root, tokens)
     if (newRoot == state.root) state.setMessage(s"$path: no such file or directory.")
     else State(newRoot, newRoot.findDescendant(state.wd.path.substring(1)))
   }
