@@ -1,6 +1,6 @@
 package com.rommelrico.filesystem.commands
 import com.rommelrico.filesystem.State
-import com.rommelrico.filesystem.files.Directory
+import com.rommelrico.filesystem.files.{Directory, File}
 
 import scala.annotation.tailrec
 
@@ -30,6 +30,22 @@ class Echo(args: Array[String]) extends Command {
     }
 
     createContentHelper(0, "")
+  }
+
+  def getRootAfterEcho(currentDirectory: Directory, path: List[String], contents: String, append: Boolean = false): Directory = {
+    if (path.isEmpty) currentDirectory
+    else if (path.tail.isEmpty) {
+      val dirEntry = currentDirectory.findEntry(path.head)
+
+      if (dirEntry == null) currentDirectory.addEntry(new File(currentDirectory.path, path.head, contents))
+      else if (dirEntry.isDirectory) currentDirectory
+      else if (append) currentDirectory.replaceEntry(path.head, dirEntry.asFile.appendContents(contents))
+      else currentDirectory.replaceEntry(path.head, dirEntry.asFile.setContents(contents))
+    }
+    else {
+      null
+      null
+    }
   }
 
   def doEcho(state: State, content: String, filename: String, append: Boolean): State = {
