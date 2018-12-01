@@ -40,8 +40,13 @@ class Cd(dir: String) extends Command {
       }
     }
 
+    def collapseRelativeTokens(path: List[String], result: List[String]): List[String] = ???
+
     // 1 - Get the tokens.
     val tokens: List[String] = path.substring(1).split(Directory.SEPARATOR).toList
+
+    // 1.5 - Eliminate or collapse relative tokens
+    val newTokens = collapseRelativeTokens(tokens, List())
 
     // 2 - Navigate to the Correct Entry.
     findEntryHelper(root, tokens)
