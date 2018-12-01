@@ -26,7 +26,10 @@ class Directory(override val parentPath: String,
 
   def addEntry(newEntry: DirEntry): Directory = new Directory(parentPath, name, contents :+ newEntry)
 
-  def removeEntry(entryName: String): Directory = ???
+  def removeEntry(entryName: String): Directory = {
+    if (!hasEntry(entryName)) this
+    else new Directory(parentPath, name, contents.filter(x => !x.name.equals(entryName)))
+  }
 
   def findEntry(entryName: String): DirEntry = {
 
