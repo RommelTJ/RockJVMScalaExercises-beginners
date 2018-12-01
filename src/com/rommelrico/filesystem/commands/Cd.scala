@@ -2,6 +2,8 @@ package com.rommelrico.filesystem.commands
 import com.rommelrico.filesystem.State
 import com.rommelrico.filesystem.files.{DirEntry, Directory}
 
+import scala.annotation.tailrec
+
 class Cd(dir: String) extends Command {
 
   override def apply(state: State): State = {
@@ -25,6 +27,24 @@ class Cd(dir: String) extends Command {
 
   }
 
-  def doFindEntry(root: Directory, path: String): DirEntry = ???
+  def doFindEntry(root: Directory, path: String): DirEntry = {
+
+    @tailrec
+    def findEntryHelper(currentDirectory: Directory, path: List[String]): DirEntry = {
+      if (path.isEmpty || path.head.isEmpty) currentDirectory
+      else if (path.tail.isEmpty) currentDirectory.findEntry(path.head)
+      else {
+        val nextDir = currentDirectory.findEntry(path.head)
+        if (nextDir == null || !nextDir.isDirectory) null
+        else findEntryHelper(nextDir.asDirectory, path.tail)
+      }
+    }
+
+    // 1 - Get the tokens.
+    val tokens: List[String] = path.substring(1).split(Directory.SEPARATOR).toList
+
+    // 2 - Navigate to the Correct Entry.
+    findEntryHelper(root, tokens)
+  }
 
 }
