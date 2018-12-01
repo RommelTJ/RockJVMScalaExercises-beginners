@@ -23,6 +23,8 @@ class Directory(override val parentPath: String,
 
   def addEntry(newEntry: DirEntry): Directory = new Directory(parentPath, name, contents :+ newEntry)
 
+  def removeEntry(entryName: String): Directory = ???
+
   def findEntry(entryName: String): DirEntry = {
 
     @tailrec
