@@ -1,5 +1,7 @@
 package com.rommelrico.filesystem.files
 
+import com.rommelrico.filesystem.FileSystemException
+
 class File(override val parentPath: String, override val name: String, contents: String)
   extends DirEntry(parentPath, name) {
 
