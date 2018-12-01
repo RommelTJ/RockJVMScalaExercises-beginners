@@ -1,6 +1,8 @@
 package com.rommelrico.filesystem.commands
 import com.rommelrico.filesystem.State
 
+import scala.annotation.tailrec
+
 class Echo(args: Array[String]) extends Command {
 
   override def apply(state: State): State = {
@@ -18,7 +20,16 @@ class Echo(args: Array[String]) extends Command {
   }
 
   // topIndex NON-INCLUSIVE!
-  def createContent(args: Array[String], topIndex: Int): String = ???
+  def createContent(args: Array[String], topIndex: Int): String = {
+
+    @tailrec
+    def createContentHelper(currentIndex: Int, accumulator: String): String = {
+      if (currentIndex >= topIndex) accumulator
+      else createContentHelper(currentIndex + 1, accumulator + " " + args(currentIndex))
+    }
+
+    createContentHelper(0, "")
+  }
 
   def doEcho(state: State, content: String, filename: String, append: Boolean): State = ???
 
