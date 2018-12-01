@@ -58,7 +58,8 @@ class Cd(dir: String) extends Command {
     val newTokens = collapseRelativeTokens(tokens, List())
 
     // 2 - Navigate to the Correct Entry.
-    findEntryHelper(root, newTokens)
+    if (newTokens == null) null
+    else findEntryHelper(root, newTokens)
   }
 
 }
