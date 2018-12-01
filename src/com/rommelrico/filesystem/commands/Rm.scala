@@ -22,7 +22,19 @@ class Rm(name: String) extends Command {
 
   def doRm(state: State, path: String): State = {
 
-    def rmHelper(directory: Directory, str: String): Directory = ???
+    def rmHelper(currentDirectory: Directory, path: List[String]): Directory = {
+      if (path.isEmpty) currentDirectory
+      else if (path.tail.isEmpty) currentDirectory.removeEntry(path.head)
+      else {
+        val nextDirectory = currentDirectory.findDescendant(path.head)
+        if (!nextDirectory.isDirectory) currentDirectory
+        else {
+          val newNextDirectory = rmHelper(nextDirectory.asDirectory, path.tail)
+          if (newNextDirectory == nextDirectory) currentDirectory
+          else currentDirectory.replaceEntry(path.head, newNextDirectory)
+        }
+      }
+    }
 
     // 4 - Get or find the entry to remove and update structure like we do for mkdir.
     val tokens = path.substring(1).split(Directory.SEPARATOR).toList
