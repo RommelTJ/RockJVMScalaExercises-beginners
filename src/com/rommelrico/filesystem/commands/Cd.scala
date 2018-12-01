@@ -5,6 +5,7 @@ class Cd(dir: String) extends Command {
 
   override def apply(state: State): State = {
     // 1 - Find Root
+    val root = state.root
 
     // 2 - Find Absolute Path of the directory I want to CD to.
 
