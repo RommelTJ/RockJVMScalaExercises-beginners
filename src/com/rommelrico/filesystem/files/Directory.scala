@@ -19,6 +19,8 @@ class Directory(override val parentPath: String,
     else findEntry(path.head).asDirectory.findDescendant(path.tail)
   }
 
+  def findDescendant(relativePath: String): Directory = ???
+
   def addEntry(newEntry: DirEntry): Directory = new Directory(parentPath, name, contents :+ newEntry)
 
   def findEntry(entryName: String): DirEntry = {
