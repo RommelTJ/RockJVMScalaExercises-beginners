@@ -46,7 +46,7 @@ class Cd(dir: String) extends Command {
       else if (".".equals(path.head)) collapseRelativeTokens(path.tail, result)
       else if ("..".equals(path.head)) {
         if (result.isEmpty) null
-        else collapseRelativeTokens(path.tail, result.tail)
+        else collapseRelativeTokens(path.tail, result.init)
       }
       else collapseRelativeTokens(path.tail, result :+ path.head)
     }
