@@ -1,5 +1,6 @@
 package com.rommelrico.filesystem.commands
 import com.rommelrico.filesystem.State
+import com.rommelrico.filesystem.files.Directory
 
 import scala.annotation.tailrec
 
@@ -31,6 +32,13 @@ class Echo(args: Array[String]) extends Command {
     createContentHelper(0, "")
   }
 
-  def doEcho(state: State, content: String, filename: String, append: Boolean): State = ???
+  def doEcho(state: State, content: String, filename: String, append: Boolean): State = {
+    if (filename.contains(Directory.SEPARATOR)) state.setMessage("Echo: filename must not contain separators.")
+    else {
+      val newRoot: Directory = ???
+      if (newRoot == state.root) state.setMessage(s"$filename: no such file!")
+      else State(newRoot, newRoot.findDescendant(state.wd.getAllFoldersInPath))
+    }
+  }
 
 }
