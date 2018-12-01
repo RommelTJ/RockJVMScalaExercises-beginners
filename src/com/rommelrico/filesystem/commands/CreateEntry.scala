@@ -49,6 +49,6 @@ abstract class CreateEntry(name: String) extends Command {
 
   }
 
-  def createSpecificEntry(state: State, name: String): DirEntry
+  def createSpecificEntry(state: State): DirEntry
 
 }
