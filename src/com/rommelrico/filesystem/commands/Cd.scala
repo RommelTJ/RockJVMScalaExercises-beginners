@@ -1,6 +1,6 @@
 package com.rommelrico.filesystem.commands
 import com.rommelrico.filesystem.State
-import com.rommelrico.filesystem.files.Directory
+import com.rommelrico.filesystem.files.{DirEntry, Directory}
 
 class Cd(dir: String) extends Command {
 
@@ -17,9 +17,12 @@ class Cd(dir: String) extends Command {
     }
 
     // 3 - Find the directory to CD to given the path.
+    val destinationDirectory = doFindEntry(root, absolutePath)
 
     // 4 - Change the state given the new directory.
 
   }
+
+  def doFindEntry(root: Directory, path: String): DirEntry = ???
 
 }
