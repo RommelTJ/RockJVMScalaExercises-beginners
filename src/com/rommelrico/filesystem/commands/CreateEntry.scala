@@ -2,7 +2,7 @@ package com.rommelrico.filesystem.commands
 import com.rommelrico.filesystem.State
 import com.rommelrico.filesystem.files.{DirEntry, Directory}
 
-class CreateEntry(name: String) extends Command {
+abstract class CreateEntry(name: String) extends Command {
 
   override def apply(state: State): State = {
     val wd = state.wd
@@ -13,7 +13,7 @@ class CreateEntry(name: String) extends Command {
     } else if (checkIllegal(name)) {
       state.setMessage(s"$name: illegal entry name!")
     } else {
-      doMkdir(name, state)
+      doCreateEntry(name, state)
     }
   }
 
@@ -21,7 +21,7 @@ class CreateEntry(name: String) extends Command {
     name.contains(".")
   }
 
-  def doMkdir(name: String, state: State): State = {
+  def doCreateEntry(name: String, state: State): State = {
 
     def updateStructure(currentDirectory: Directory, path: List[String], newEntry: DirEntry): Directory = {
       if (path.isEmpty) currentDirectory.addEntry(newEntry)
@@ -37,7 +37,7 @@ class CreateEntry(name: String) extends Command {
     val allDirsInPath = wd.getAllFoldersInPath
 
     // 2. Create a new directory entry in the wd.
-    val newEntry: DirEntry = ???
+    val newEntry: DirEntry = createSpecificEntry(state, name)
 
     // 3. Updating the whole directory structure starting from the root. (IMMUTABLE)
     val newRoot = updateStructure(state.root, allDirsInPath, newEntry)
@@ -48,5 +48,7 @@ class CreateEntry(name: String) extends Command {
     State(newRoot, newWd)
 
   }
+
+  def createSpecificEntry(state: State, name: String): DirEntry
 
 }
