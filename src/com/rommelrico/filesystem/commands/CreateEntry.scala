@@ -37,7 +37,7 @@ abstract class CreateEntry(name: String) extends Command {
     val allDirsInPath = wd.getAllFoldersInPath
 
     // 2. Create a new directory entry in the wd.
-    val newEntry: DirEntry = createSpecificEntry(state, name)
+    val newEntry: DirEntry = createSpecificEntry(state)
 
     // 3. Updating the whole directory structure starting from the root. (IMMUTABLE)
     val newRoot = updateStructure(state.root, allDirsInPath, newEntry)
