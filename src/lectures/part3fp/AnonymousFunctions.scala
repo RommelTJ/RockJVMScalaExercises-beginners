@@ -20,4 +20,9 @@ object AnonymousFunctions extends App {
     str.toInt
   }
 
+  // More synctactic sugar.
+  val niceIncrementer: Int => Int = (x: Int) => x + 1
+  val niceIncrementer2: Int => Int = _ + 1 // equivalent to the above
+  println(niceIncrementer2(1)) // prints 2
+
 }
