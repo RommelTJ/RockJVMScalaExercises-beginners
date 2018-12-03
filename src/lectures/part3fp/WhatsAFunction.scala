@@ -22,6 +22,8 @@ object WhatsAFunction extends App {
   }
   println(adder(3, 3))
 
+  // MAJOR TAKEAWAY: ALL SCALA FUNCTIONS ARE OBJECTS.
+
 }
 
 trait MyFunction[A, B] {
