@@ -73,11 +73,11 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
 }
 
 trait MyPredicate[-T] {
-  def test(element: T): Boolean
+  def apply(element: T): Boolean
 }
 
 trait MyTransformer[-A, +B] {
-  def transform(element: A): B
+  def apply(element: A): B
 }
 
 object ListTest extends App {
