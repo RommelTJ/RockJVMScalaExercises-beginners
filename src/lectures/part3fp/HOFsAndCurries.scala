@@ -28,5 +28,8 @@ object HOFsAndCurries extends App {
 
   // Curried Functions
   val superAdder: Int => Int => Int = (x: Int) => (y: Int) => x + y
+  val add3 = superAdder(3) // y => 3 + y
+  println(add3(10)) // prints 13
+  println(superAdder(3)(10)) // prints 13
 
 }
