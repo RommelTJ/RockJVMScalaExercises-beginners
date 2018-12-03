@@ -36,6 +36,15 @@ object WhatsAFunction extends App {
   }
   println(concat("Hello ", "World"))
 
+  // Higher-Order Functions
+  val superAdder: Function1[Int, Function1[Int, Int]] = new Function1[Int, Function1[Int, Int]] {
+    override def apply(v1: Int): Function1[Int, Int] = new Function1[Int, Int] {
+      override def apply(v2: Int): Int = v1 + v2
+    }
+  }
+  val adder3 = superAdder(3)
+  println(adder3(4)) // 3 + 4 = 7
+
 }
 
 trait MyFunction[A, B] {
