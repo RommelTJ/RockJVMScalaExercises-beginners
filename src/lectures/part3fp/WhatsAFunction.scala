@@ -5,6 +5,6 @@ object WhatsAFunction extends App {
   // Problem: We come from an OOP world.
 }
 
-class Action {
-  def execute(element: Int): String = ???
+trait Action[A, B] {
+  def execute(element: A): B
 }
