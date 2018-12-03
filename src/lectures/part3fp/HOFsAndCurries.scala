@@ -7,4 +7,13 @@ object HOFsAndCurries extends App {
   // Higher-Order Function (HOF)
   // Ex: map, flatMap, filter in MyList
 
+  // Function that applies a function n times over a value x
+  // nTimes(f, n, x)
+  // nTimes(f, 3, x) => f(f(f(x)))
+  // nTimes(f, n, x) => nTimes(f, n-1, f(x))
+  def nTimes(f: Int => Int, n: Int, x: Int): Int =
+    if (n <= 0) x
+    else nTimes(f, n-1, f(x))
+  
+
 }
