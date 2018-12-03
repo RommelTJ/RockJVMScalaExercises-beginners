@@ -18,4 +18,12 @@ object HOFsAndCurries extends App {
   val plusOne = (x: Int) => x + 1
   println(nTimes(plusOne, 10, 1)) // prints 11
 
+  // nTimesBetter(f, n) = x => f(f(f...(x)))
+  def nTimesBetter(f: Int => Int, n: Int): (Int => Int) = {
+    if (n <= 0) (x: Int) => x
+    else (x: Int) => nTimesBetter(f, n-1)(f(x))
+  }
+  val plus10 = nTimesBetter(plusOne, 10)
+  println(plus10(1)) // prints 11
+
 }
