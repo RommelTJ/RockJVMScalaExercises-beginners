@@ -32,4 +32,7 @@ object HOFsAndCurries extends App {
   println(add3(10)) // prints 13
   println(superAdder(3)(10)) // prints 13
 
+  // Functions with multiple parameter lists
+  def curriedFormatter(c: String)(x: Double): String = c.format(x)
+
 }
