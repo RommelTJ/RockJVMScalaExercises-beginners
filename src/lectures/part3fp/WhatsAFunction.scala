@@ -9,6 +9,12 @@ object WhatsAFunction extends App {
   }
   println(doubler(2)) // can be called like a function and calls the apply method
 
+  // Function Types = Function1[A, B]
+  val stringToIntConverter = new Function1[String, Int] {
+    override def apply(string: String): Int = string.toInt
+  }
+  println(stringToIntConverter("2") + 3)
+
 }
 
 trait MyFunction[A, B] {
