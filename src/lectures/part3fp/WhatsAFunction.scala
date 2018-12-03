@@ -24,6 +24,13 @@ object WhatsAFunction extends App {
 
   // MAJOR TAKEAWAY: ALL SCALA FUNCTIONS ARE OBJECTS.
 
+  // Exercises:
+  // 1 - a function that takes 2 strings and concatenates them.
+  // 2 - MyList implementation and transform MyPredicate and MyTransformer into function types.
+  // 3 - Define a function which takes an Int argument and returns another function which takes an Int and return an Int.
+  // 3.1 - What's the type of this function.
+  // 3.2 - How to do it.
+
 }
 
 trait MyFunction[A, B] {
