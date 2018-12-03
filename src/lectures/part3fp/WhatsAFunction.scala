@@ -31,6 +31,11 @@ object WhatsAFunction extends App {
   // 3.1 - What's the type of this function.
   // 3.2 - How to do it.
 
+  val concat: (String, String) => String = new Function2[String, String, String] {
+    def apply(s1: String, s2: String): String = s1 + s2
+  }
+  println(concat("Hello ", "World"))
+
 }
 
 trait MyFunction[A, B] {
