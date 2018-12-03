@@ -32,7 +32,7 @@ case object Empty extends MyList[Nothing] {
   override def head: Nothing = throw new NoSuchElementException
   override def tail: MyList[Nothing] = throw new NoSuchElementException
   override def isEmpty: Boolean = true
-  override def add[B >: Nothing](element: B): MyList[B] = new Cons(element, Empty)
+  override def add[B >: Nothing](element: B): MyList[B] = Cons(element, Empty)
 
   def printElements: String = ""
 
@@ -49,7 +49,7 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   override def head: A = h
   override def tail: MyList[A] = t
   override def isEmpty: Boolean = false
-  override def add[B >: A](element: B): MyList[B] = new Cons(element, this)
+  override def add[B >: A](element: B): MyList[B] = Cons(element, this)
 
   def printElements: String = {
     if (t.isEmpty) "" + h
@@ -57,7 +57,7 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   }
 
   override def map[B](transformer: A => B): MyList[B] = {
-    new Cons(transformer(h), t.map(transformer))
+    Cons(transformer(h), t.map(transformer))
   }
 
   override def flatMap[B](transformer: A => MyList[B]): MyList[B] = {
@@ -65,19 +65,19 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   }
 
   override def filter(predicate: A => Boolean): MyList[A] = {
-    if (predicate(h)) new Cons(h, t.filter(predicate))
+    if (predicate(h)) Cons(h, t.filter(predicate))
     else t.filter(predicate)
   }
 
-  override def ++[B >: A](list: MyList[B]): MyList[B] = new Cons(h, t ++ list)
+  override def ++[B >: A](list: MyList[B]): MyList[B] = Cons(h, t ++ list)
 
 }
 
 object ListTest extends App {
-  val listOfIntegers: MyList[Int] = new Cons(1, new Cons(2, new Cons(3, Empty)))
+  val listOfIntegers: MyList[Int] = Cons(1, Cons(2, Cons(3, Empty)))
   val listOfIntegers2: MyList[Int] = Cons(1, Cons(2, Cons(3, Empty)))
-  val anotherListOfIntegers: MyList[Int] = new Cons(1, new Cons(4, new Cons(5, Empty)))
-  val listOfStrings: MyList[String] = new Cons("Hello", new Cons("Scala", Empty))
+  val anotherListOfIntegers: MyList[Int] = Cons(1, Cons(4, Cons(5, Empty)))
+  val listOfStrings: MyList[String] = Cons("Hello", Cons("Scala", Empty))
   println(listOfIntegers.toString)
   println(listOfStrings.toString)
 
@@ -86,7 +86,7 @@ object ListTest extends App {
   println(listOfIntegers.filter((element: Int) => element % 2 == 0).toString) // Prints [2]
 
   println((listOfIntegers ++ anotherListOfIntegers).toString) // [1 2 3 1 4 5]
-  println(listOfIntegers.flatMap((element: Int) => new Cons(element, new Cons(element + 1, Empty))).toString) // Prints [1 2 2 3 3 4]
+  println(listOfIntegers.flatMap((element: Int) => Cons(element, Cons(element + 1, Empty))).toString) // Prints [1 2 2 3 3 4]
 
   println(listOfIntegers == listOfIntegers2)
 
