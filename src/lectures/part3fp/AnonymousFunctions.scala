@@ -25,4 +25,7 @@ object AnonymousFunctions extends App {
   val niceIncrementer2: Int => Int = _ + 1 // equivalent to the above
   println(niceIncrementer2(1)) // prints 2
 
+  val niceAdder: (Int, Int) => Int = _ + _ // equivalent to (a, b) => a + b
+  println(niceAdder(2, 3))
+
 }
