@@ -5,6 +5,6 @@ object WhatsAFunction extends App {
   // Problem: We come from an OOP world.
 }
 
-trait Action[A, B] {
-  def execute(element: A): B
+trait MyFunction[A, B] {
+  def apply(element: A): B
 }
