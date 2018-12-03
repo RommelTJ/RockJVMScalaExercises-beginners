@@ -16,7 +16,7 @@ object AnonymousFunctions extends App {
   println(justDoSomething()) // prints 3
 
   // Curly Braces with Lambdas
-  val stringToInt = { (str: String) =>
+  val stringToInt = { str: String =>
     str.toInt
   }
 
