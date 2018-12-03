@@ -7,6 +7,8 @@ object WhatsAFunction extends App {
   val doubler = new MyFunction[Int, Int] {
     override def apply(element: Int): Int = element * 2
   }
+  println(doubler(2)) // can be called like a function and calls the apply method
+
 }
 
 trait MyFunction[A, B] {
