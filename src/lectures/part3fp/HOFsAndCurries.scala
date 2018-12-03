@@ -26,4 +26,7 @@ object HOFsAndCurries extends App {
   val plus10 = nTimesBetter(plusOne, 10)
   println(plus10(1)) // prints 11
 
+  // Curried Functions
+  val superAdder: Int => Int => Int = (x: Int) => (y: Int) => x + y
+
 }
