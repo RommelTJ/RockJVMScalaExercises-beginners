@@ -29,6 +29,7 @@ abstract class MyList[+A] {
   // Higher-Order Functions
   def foreach(f: A => Unit): Unit
   def sort(compare: (A, A) => Int): MyList[A]
+  def zipwith[B, C](list: MyList[B], zip: (A, B) => C): MyList[C]
 
 }
 
@@ -47,8 +48,13 @@ case object Empty extends MyList[Nothing] {
 
   override def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
 
+  // HOFs
   override def foreach(f: Nothing => Unit): Unit = ()
   override def sort(compare: (Nothing, Nothing) => Int): MyList[Nothing] = Empty
+  override def zipwith[B, C](list: MyList[B], zip: (Nothing, B) => C): MyList[C] = {
+    if (!list.isEmpty) throw new RuntimeException("Lists do not have the same length.")
+    else Empty
+  }
 }
 
 case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
@@ -77,6 +83,7 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
 
   override def ++[B >: A](list: MyList[B]): MyList[B] = Cons(h, t ++ list)
 
+  // HOFs
   override def foreach(f: A => Unit): Unit = {
     f(h)
     t.foreach(f)
@@ -93,12 +100,17 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
     insert(h, sortedTail)
   }
 
+  override def zipwith[B, C](list: MyList[B], zip: (A, B) => C): MyList[C] = {
+    if (list.isEmpty) throw new RuntimeException("Lists do not have the same length.")
+    else Cons(zip(h, list.head), t.zipwith(list.tail, zip))
+  }
 }
 
 object ListTest extends App {
   val listOfIntegers: MyList[Int] = Cons(1, Cons(2, Cons(3, Empty)))
   val listOfIntegers2: MyList[Int] = Cons(1, Cons(2, Cons(3, Empty)))
   val anotherListOfIntegers: MyList[Int] = Cons(1, Cons(4, Cons(5, Empty)))
+  val anotherListOfIntegers2: MyList[Int] = Cons(1, Cons(4, Empty))
   val listOfStrings: MyList[String] = Cons("Hello", Cons("Scala", Empty))
   println(listOfIntegers.toString)
   println(listOfStrings.toString)
@@ -115,5 +127,5 @@ object ListTest extends App {
   listOfIntegers.foreach(x => println(x))
   listOfIntegers.foreach(println)
   println(listOfIntegers.sort((x, y) => y - x))
-
+  println(anotherListOfIntegers2.zipwith[String, String](listOfStrings, _ + " " + _))
 }
