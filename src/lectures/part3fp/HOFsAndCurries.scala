@@ -48,4 +48,7 @@ object HOFsAndCurries extends App {
   def compose(f: Int => Int, g: Int => Int): Int => Int =
     x => f(g(x))
 
+  def andThen(f: Int => Int, g: Int => Int): Int => Int =
+    x => g(f(x))
+
 }
