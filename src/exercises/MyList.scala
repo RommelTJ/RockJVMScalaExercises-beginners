@@ -26,6 +26,9 @@ abstract class MyList[+A] {
   // Concatenation
   def ++[B >: A](list: MyList[B]): MyList[B]
 
+  // Higher-Order Functions
+  def foreach(f: A => Unit): Unit
+
 }
 
 case object Empty extends MyList[Nothing] {
@@ -43,6 +46,7 @@ case object Empty extends MyList[Nothing] {
 
   override def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
 
+  override def foreach(f: Nothing => Unit): Unit = ()
 }
 
 case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
@@ -71,6 +75,11 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
 
   override def ++[B >: A](list: MyList[B]): MyList[B] = Cons(h, t ++ list)
 
+  override def foreach(f: A => Unit): Unit = {
+    f(h)
+    t.foreach(f)
+  }
+
 }
 
 object ListTest extends App {
@@ -89,5 +98,8 @@ object ListTest extends App {
   println(listOfIntegers.flatMap((element: Int) => Cons(element, Cons(element + 1, Empty))).toString) // Prints [1 2 2 3 3 4]
 
   println(listOfIntegers == listOfIntegers2)
+
+  listOfIntegers.foreach(x => println(x))
+  listOfIntegers.foreach(println)
 
 }
