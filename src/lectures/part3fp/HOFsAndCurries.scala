@@ -58,4 +58,11 @@ object HOFsAndCurries extends App {
   val simpleAdder = fromCurry(superAdder2)
   println(simpleAdder(4, 17)) // prints 21
 
+  val add2 = (x: Int) => x + 2
+  val times3 = (x: Int) => x * 3
+  val composed = compose(add2, times3)
+  val ordered = andThen(add2, times3)
+  println(composed(4)) // prints 14
+  println(ordered(4)) // prints 18
+
 }
