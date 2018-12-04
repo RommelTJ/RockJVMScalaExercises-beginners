@@ -14,5 +14,10 @@ case object MaybeNot extends Maybe[Nothing] {
 }
 
 case class Just[+T](value: T) extends Maybe[T] {
-
+  override def map[B](f: T => B): Maybe[B] = Just(f(value))
+  override def flatMap[B](f: T => Maybe[B]): Maybe[B] = f(value)
+  override def filter(p: T => Boolean): Maybe[T] = {
+    if (p(value)) this
+    else MaybeNot
+  }
 }
