@@ -21,4 +21,10 @@ object MapFlatmapFilterFor extends App {
   println(toPair)
   println(list.flatMap(toPair))
 
+  // Print all combinations between two lists
+  val numbers = List(1, 2, 3, 4)
+  val characters = List('a', 'b', 'c', 'd')
+  val combinations = numbers.flatMap(n => characters.map(c => s"$c$n"))
+  println(combinations)
+
 }
