@@ -32,4 +32,12 @@ object MapFlatmapFilterFor extends App {
   // Foreach
   list.foreach(println)
 
+  // for-comprehensions (easier to read)
+  val forCombinations = for {
+    n <- numbers
+    c <- characters
+    color <- colors
+  } yield s"$c$n$color"
+  println(forCombinations)
+
 }
