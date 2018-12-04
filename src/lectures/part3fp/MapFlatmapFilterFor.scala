@@ -25,6 +25,7 @@ object MapFlatmapFilterFor extends App {
   val numbers = List(1, 2, 3, 4)
   val characters = List('a', 'b', 'c', 'd')
   val colors = List("Black", "White")
+  // "Iterating" in Scala.
   val combinations = numbers.flatMap(n => characters.flatMap(c => colors.map(color => s"$c$n$color")))
   println(combinations)
 
