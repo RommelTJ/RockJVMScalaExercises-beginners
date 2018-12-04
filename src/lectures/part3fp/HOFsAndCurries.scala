@@ -51,4 +51,8 @@ object HOFsAndCurries extends App {
   def andThen[A, B, C](f: A => B, g: B => C): A => C =
     x => g(f(x))
 
+  def superAdder2: (Int => Int => Int) = toCurry(_ + _)
+  def add4 = superAdder2(4)
+  println(add4(17)) // prints 21
+
 }
