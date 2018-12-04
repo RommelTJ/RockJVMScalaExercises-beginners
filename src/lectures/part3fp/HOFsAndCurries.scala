@@ -40,6 +40,9 @@ object HOFsAndCurries extends App {
   println(standardFormat(Math.PI))
   println(preciseFormat(Math.PI))
 
-  def toCurry(f: (Int, Int) => Int): (Int => Int => Int) = x => y => f(x, y)
+  def toCurry(f: (Int, Int) => Int): (Int => Int => Int) =
+    x => y => f(x, y)
+  def fromCurry(f: (Int => Int => Int)): (Int, Int) => Int =
+    (x, y) => f(x)(y)
 
 }
