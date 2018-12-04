@@ -45,4 +45,10 @@ object MapFlatmapFilterFor extends App {
     n <- numbers
   } println(n)
 
+  // Syntax overload
+  list.map { x =>
+    x * 2
+  }
+  println(list)
+
 }
