@@ -40,4 +40,9 @@ object MapFlatmapFilterFor extends App {
   } yield s"$c$n$color"
   println(forCombinations)
 
+  // For-comprehension with side-effect (equivalent to foreach here)
+  for {
+    n <- numbers
+  } println(n)
+
 }
