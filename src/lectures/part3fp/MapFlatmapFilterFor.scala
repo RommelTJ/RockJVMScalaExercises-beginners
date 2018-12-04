@@ -8,4 +8,8 @@ object MapFlatmapFilterFor extends App {
   println(list.head)
   println(list.tail)
 
+  // Map
+  println(list.map(_ + 1))
+  println(list.map(_ + " is a number"))
+
 }
