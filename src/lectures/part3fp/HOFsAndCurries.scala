@@ -55,4 +55,7 @@ object HOFsAndCurries extends App {
   def add4 = superAdder2(4)
   println(add4(17)) // prints 21
 
+  val simpleAdder = fromCurry(superAdder2)
+  println(simpleAdder(4, 17)) // prints 21
+
 }
