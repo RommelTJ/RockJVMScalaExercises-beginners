@@ -12,4 +12,7 @@ object MapFlatmapFilterFor extends App {
   println(list.map(_ + 1))
   println(list.map(_ + " is a number"))
 
+  // Filter
+  println(list.filter(_ % 2 == 0))
+
 }
