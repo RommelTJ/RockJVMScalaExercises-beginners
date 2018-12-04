@@ -34,7 +34,7 @@ object MapFlatmapFilterFor extends App {
 
   // for-comprehensions (easier to read)
   val forCombinations = for {
-    n <- numbers
+    n <- numbers if n % 2 == 0 // Guard, aka a filter
     c <- characters
     color <- colors
   } yield s"$c$n$color"
