@@ -28,6 +28,7 @@ abstract class MyList[+A] {
 
   // Higher-Order Functions
   def foreach(f: A => Unit): Unit
+  def sort(compare: (A, A) => Int): MyList[A]
 
 }
 
@@ -47,6 +48,7 @@ case object Empty extends MyList[Nothing] {
   override def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
 
   override def foreach(f: Nothing => Unit): Unit = ()
+  override def sort(compare: (Nothing, Nothing) => Int): MyList[Nothing] = Empty
 }
 
 case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
@@ -80,6 +82,17 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
     t.foreach(f)
   }
 
+  override def sort(compare: (A, A) => Int): MyList[A] = {
+    def insert(x: A, sortedList: MyList[A]): MyList[A] = {
+      if (sortedList.isEmpty) Cons(x, Empty)
+      else if (compare(x, sortedList.head) <= 0) Cons(x, sortedList)
+      else Cons(sortedList.head, insert(x, sortedList.tail))
+    }
+
+    val sortedTail = t.sort(compare)
+    insert(h, sortedTail)
+  }
+
 }
 
 object ListTest extends App {
@@ -101,5 +114,6 @@ object ListTest extends App {
 
   listOfIntegers.foreach(x => println(x))
   listOfIntegers.foreach(println)
+  println(listOfIntegers.sort((x, y) => y - x))
 
 }
