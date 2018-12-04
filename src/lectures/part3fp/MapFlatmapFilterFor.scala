@@ -15,4 +15,10 @@ object MapFlatmapFilterFor extends App {
   // Filter
   println(list.filter(_ % 2 == 0))
 
+  // Flatmap
+  val toPair = (x: Int) => List(x, x + 1)
+  println(list)
+  println(toPair)
+  println(list.flatMap(toPair))
+
 }
