@@ -19,5 +19,7 @@ object Sequences extends App {
   val aRange2 = 1 until 10
   aRange.foreach(println) // Inclusive, i.e. prints 1 - 10
   aRange2.foreach(println) // Not Inclusive, i.e. prints 1 - 9
+  // Range example.
+  (1 to 10).foreach(x => print("Hello"))
 
 }
