@@ -38,4 +38,11 @@ object TuplesAndMaps extends App {
   // mapValues
   println(aPhoneBook.mapValues(num => "1-800-" + num * 10)) // prints Map(Jim -> 1-800-5550, Daniel -> 1-800-7890)
 
+  // Conversions to Other Collections
+  println(aPhoneBook.toList) // prints List((Jim,555), (Daniel,789))
+  println(List(("Daniel", 555)).toMap) // prints Map(Daniel -> 555)
+  val names = List("Bob", "James", "Angela", "Mary", "Miguel", "Daniel", "Jim")
+  println(names.groupBy(_.charAt(0))) // name => name.charAt(0)
+  // prints Map(J -> List(James, Jim), A -> List(Angela), M -> List(Mary, Miguel), B -> List(Bob), D -> List(Daniel))
+
 }
