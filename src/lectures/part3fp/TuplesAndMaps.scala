@@ -10,4 +10,10 @@ object TuplesAndMaps extends App {
   println(aTuple.copy(_2 = "goodbye Java")) // prints (2,goodbye Java)
   println(aTuple.swap) // prints (hello, Scala,2)
 
+  // Maps - keys -> values
+  val aMap: Map[String, Int] = Map()
+  val aPhoneBook = Map(("Jim", 555), "Daniel" -> 789) // -> is a syntactic sugar for a tuple
+  // a -> b is sugar for (a, b)\
+  println(aPhoneBook) // prints Map(Jim -> 555, Daniel -> 789)
+
 }
