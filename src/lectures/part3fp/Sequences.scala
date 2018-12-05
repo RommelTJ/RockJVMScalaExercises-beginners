@@ -14,4 +14,10 @@ object Sequences extends App {
   val newSequence = aSequence ++ Seq(7, 6, 5)
   println(newSequence.sorted)
 
+  // Ranges
+  val aRange: Seq[Int] = 1 to 10
+  val aRange2 = 1 until 10
+  aRange.foreach(println) // Inclusive, i.e. prints 1 - 10
+  aRange2.foreach(println) // Not Inclusive, i.e. prints 1 - 9
+
 }
