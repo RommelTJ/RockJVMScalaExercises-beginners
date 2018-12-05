@@ -22,4 +22,9 @@ object TuplesAndMaps extends App {
   // println(aPhoneBook("Mary")) // NoSuchElementException
   println(aPhoneBook("Mary")) // prints -1 because we added the withDefaultValue(-1)
 
+  // Add a Pairing
+  val newPairing = "Mary" -> 678
+  val newPhoneBook = aPhoneBook + newPairing
+  println(newPhoneBook) // prints Map(Jim -> 555, Daniel -> 789, Mary -> 678)
+
 }
