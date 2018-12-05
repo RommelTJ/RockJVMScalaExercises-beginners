@@ -76,5 +76,9 @@ object Sequences extends App {
     // Average time it takes for this collection to be updated at a random index for a random value.
     times.sum * 1.0 / maxRuns
   }
+  val numbersList = (1 to maxCapacity).toList
+  val numbersVector = (1 to maxCapacity).toVector
+  println(getWriteTime(numbersList)) // printed   7362704.071 nanoseconds
+  println(getWriteTime(numbersVector)) // printed    6772.12 nanoseconds
 
 }
