@@ -35,4 +35,14 @@ object Sequences extends App {
   println(fiveApples) // prints List(apples, apples, apples, apples, apples)
   println(aList.mkString("-|-")) // prints 1-|-2-|-3
 
+  // Arrays - The equivalent of Java arrays. Can be constructed with predefined lengths.
+  // Can be mutated.
+  val numbers = Array(1, 2, 3, 4)
+  val threeElements = Array.ofDim[Int](3)
+  println(threeElements) // prints [I@3cda1055
+  threeElements.foreach(println) // prints 0 0 0
+  // Mutation in place
+  numbers(2) = 0 // syntactic sugar for numbers.update(2, 0) update is a special method in Scala.
+  println(numbers.mkString(" ")) // prints 1 2 0 4
+
 }
