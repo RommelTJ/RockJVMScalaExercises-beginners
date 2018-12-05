@@ -45,4 +45,8 @@ object Sequences extends App {
   numbers(2) = 0 // syntactic sugar for numbers.update(2, 0) update is a special method in Scala.
   println(numbers.mkString(" ")) // prints 1 2 0 4
 
+  // Arrays and Sequences
+  val numbersSeq: Seq[Int] = numbers // this is ok because of implicit conversion!
+  println(numbersSeq) // prints WrappedArray(1, 2, 0, 4)
+
 }
