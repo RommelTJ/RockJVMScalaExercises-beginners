@@ -35,4 +35,7 @@ object TuplesAndMaps extends App {
   // x => x.startsWith("J")
   println(aPhoneBook.filterKeys(_.startsWith("J"))) // prints Map(Jim -> 555)
 
+  // mapValues
+  println(aPhoneBook.mapValues(num => "1-800-" + num * 10)) // prints Map(Jim -> 1-800-5550, Daniel -> 1-800-7890)
+
 }
