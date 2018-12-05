@@ -1,5 +1,7 @@
 package lectures.part3fp
 
+import scala.util.Random
+
 object Sequences extends App {
 
   // Sequences - A very general interface for data structures that
@@ -57,5 +59,22 @@ object Sequences extends App {
   // - Good performance for large sizes
   val vector: Vector[Int] = Vector(1, 2, 3)
   println(vector) // prints Vector(1, 2, 3)
+
+  // Vectors vs Lists
+  val maxRuns = 1000
+  val maxCapacity = 1000000
+  def getWriteTime(collection: Seq[Int]): Double = {
+    val r = new Random
+    val times = for {
+      it <- 1 to maxRuns
+    } yield {
+      var currentTime = System.nanoTime()
+      collection.updated(r.nextInt(maxCapacity), r.nextInt())
+      System.nanoTime() - currentTime
+    }
+
+    // Average time it takes for this collection to be updated at a random index for a random value.
+    times.sum * 1.0 / maxRuns
+  }
 
 }
