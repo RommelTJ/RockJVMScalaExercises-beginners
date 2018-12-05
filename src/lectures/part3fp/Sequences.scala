@@ -49,4 +49,13 @@ object Sequences extends App {
   val numbersSeq: Seq[Int] = numbers // this is ok because of implicit conversion!
   println(numbersSeq) // prints WrappedArray(1, 2, 0, 4)
 
+  // Vectors
+  // Default Implementation for immutable sequences
+  // - Effectively constant indexed read and write
+  // - Fast append/prepend
+  // - Implemented as a fixed-branched tried (branch factor 32)
+  // - Good performance for large sizes
+  val vector: Vector[Int] = Vector(1, 2, 3)
+  println(vector) // prints Vector(1, 2, 3)
+
 }
