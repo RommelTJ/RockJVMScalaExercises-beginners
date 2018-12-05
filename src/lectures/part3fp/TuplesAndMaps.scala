@@ -12,8 +12,14 @@ object TuplesAndMaps extends App {
 
   // Maps - keys -> values
   val aMap: Map[String, Int] = Map()
-  val aPhoneBook = Map(("Jim", 555), "Daniel" -> 789) // -> is a syntactic sugar for a tuple
+  val aPhoneBook = Map(("Jim", 555), "Daniel" -> 789).withDefaultValue(-1) // -> is a syntactic sugar for a tuple
   // a -> b is sugar for (a, b)\
   println(aPhoneBook) // prints Map(Jim -> 555, Daniel -> 789)
+
+  // Map Operations
+  println(aPhoneBook.contains("Jim")) // prints true
+  println(aPhoneBook("Jim")) // prints 555
+  // println(aPhoneBook("Mary")) // NoSuchElementException
+  println(aPhoneBook("Mary")) // prints -1 because we added the withDefaultValue(-1)
 
 }
