@@ -27,4 +27,12 @@ object TuplesAndMaps extends App {
   val newPhoneBook = aPhoneBook + newPairing
   println(newPhoneBook) // prints Map(Jim -> 555, Daniel -> 789, Mary -> 678)
 
+  // Functionals on Maps
+  // map, flatMap, filter
+  println(aPhoneBook.map(pair => pair._1.toLowerCase -> pair._2)) // prints Map(jim -> 555, daniel -> 789)
+
+  // filterKeys
+  // x => x.startsWith("J")
+  println(aPhoneBook.filterKeys(_.startsWith("J"))) // prints Map(Jim -> 555)
+
 }
