@@ -22,4 +22,17 @@ object Sequences extends App {
   // Range example.
   (1 to 10).foreach(x => print("Hello"))
 
+  // List - A LinearSeq immutable linked list
+  // - head, tail, isEmpty are fast O(1)
+  // - most operations are O(n)
+  // - Sealed - has two subtypes: object Nil (empty) and class ::
+  val aList = List(1, 2, 3)
+  val prepended = 42 :: aList // prepending operator
+  println(prepended) // prints List(42, 1, 2, 3)
+  val prependedAndAppended = 42 +: aList :+ 89 // +: = prepending, :+ = appending
+  println(prependedAndAppended) // prints List(42, 1, 2, 3, 89)
+  val fiveApples = List.fill(5)("apples")
+  println(fiveApples) // prints List(apples, apples, apples, apples, apples)
+  println(aList.mkString("-|-")) // prints 1-|-2-|-3
+
 }
