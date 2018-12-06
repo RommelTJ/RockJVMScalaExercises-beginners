@@ -45,4 +45,16 @@ object TuplesAndMaps extends App {
   println(names.groupBy(_.charAt(0))) // name => name.charAt(0)
   // prints Map(J -> List(James, Jim), A -> List(Angela), M -> List(Mary, Miguel), B -> List(Bob), D -> List(Daniel))
 
+  // 1 - What would happen if I had two original entries "Jim" -> 555 and "JIM" -> 990 and you mapped them to lowercase?
+  // 2 - Overly simplified social network based on maps:
+  //     Person = String
+  //     - add a person to the network
+  //     - remove
+  //     - friend (mutual)
+  //     - unfriend (mutual)
+  //     - number of friends of a person
+  //     - person with most friends
+  //     - how many people have no friends
+  //     - if there is a social connection between two people (direct or not)
+
 }
