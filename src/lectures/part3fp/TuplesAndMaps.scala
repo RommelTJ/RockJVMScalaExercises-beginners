@@ -69,12 +69,11 @@ object TuplesAndMaps extends App {
   // 2 - Overly simplified social network
   val socialNetwork: Map[String, List[String]] = Map() // empty network.
   def add(network: Map[String, List[String]], person: String): Map[String, List[String]] = {
-    val pair = person -> List()
     if (network.contains(person)) {
       println("This person is already added!")
       network
     } else {
-      network + pair
+      network + (person -> List())
     }
   }
 
@@ -122,6 +121,7 @@ object TuplesAndMaps extends App {
   }
 
   def mostPopularPerson(network: Map[String, List[String]]): String = ???
+
   def lonelyPeopleCount(network: Map[String, List[String]]): Int = ???
   def areConnected(network: Map[String, List[String]], person1: String, person2: String): Boolean = ???
 
