@@ -67,17 +67,17 @@ object TuplesAndMaps extends App {
   println(mappedPair) // prints Map(jim -> 990)
 
   // 2 - Overly simplified social network
-  val socialNetwork: Map[String, List[String]] = Map() // empty network.
-  def add(network: Map[String, List[String]], person: String): Map[String, List[String]] = {
+  val socialNetwork: Map[String, Set[String]] = Map() // empty network.
+  def add(network: Map[String, Set[String]], person: String): Map[String, Set[String]] = {
     if (network.contains(person)) {
       println("This person is already added!")
       network
     } else {
-      network + (person -> List())
+      network + (person -> Set())
     }
   }
 
-  def remove(network: Map[String, List[String]], person: String): Map[String, List[String]] = {
+  def remove(network: Map[String, Set[String]], person: String): Map[String, Set[String]] = {
     if (network.contains(person)) network.filter(_._1 != person)
     else {
       println("This person is not in the network!")
@@ -85,13 +85,13 @@ object TuplesAndMaps extends App {
     }
   }
 
-  def friend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = {
+  def friend(network: Map[String, Set[String]], person: String, friend: String): Map[String, Set[String]] = {
     if (network.contains(person) && network.contains(friend)) {
       // Mutually connect people.
-      val personFriendList: List[String] = network(person) :+ friend
+      val personFriendList: Set[String] = network(person) + friend
       val newPerson = person -> personFriendList
 
-      val friendFriendList: List[String] = network(friend) :+ person
+      val friendFriendList: Set[String] = network(friend) + person
       val newFriend = friend -> friendFriendList
       network + newPerson + newFriend
     } else {
@@ -100,12 +100,12 @@ object TuplesAndMaps extends App {
     }
   }
 
-  def unfriend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = {
+  def unfriend(network: Map[String, Set[String]], person: String, friend: String): Map[String, Set[String]] = {
     if (network.contains(person) && network.contains(friend)) {
-      val personFriendList: List[String] = network(person).filter(_ != friend)
+      val personFriendList: Set[String] = network(person).filter(_ != friend)
       val newPerson = person -> personFriendList
 
-      val friendFriendList: List[String] = network(friend).filter(_ != person)
+      val friendFriendList: Set[String] = network(friend).filter(_ != person)
       val newFriend = friend -> friendFriendList
 
       network + newPerson + newFriend
@@ -115,15 +115,15 @@ object TuplesAndMaps extends App {
     }
   }
 
-  def friendCount(network: Map[String, List[String]], person: String): Int = {
-    if (network.contains(person)) network(person).length
+  def friendCount(network: Map[String, Set[String]], person: String): Int = {
+    if (network.contains(person)) network(person).size
     else -1
   }
 
-  def mostPopularPerson(network: Map[String, List[String]]): String = ???
+  def mostPopularPerson(network: Map[String, Set[String]]): String = ???
 
-  def lonelyPeopleCount(network: Map[String, List[String]]): Int = ???
-  def areConnected(network: Map[String, List[String]], person1: String, person2: String): Boolean = ???
+  def lonelyPeopleCount(network: Map[String, Set[String]]): Int = ???
+  def areConnected(network: Map[String, Set[String]], person1: String, person2: String): Boolean = ???
 
   // Testing
   val person1 = "Alice"
