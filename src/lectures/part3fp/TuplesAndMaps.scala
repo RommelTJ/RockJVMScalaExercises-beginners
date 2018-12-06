@@ -138,7 +138,21 @@ object TuplesAndMaps extends App {
 
   def lonelyPeopleCount(network: Map[String, Set[String]]): Int = network.filterKeys(p => network(p).isEmpty).size
 
-  def areConnected(network: Map[String, Set[String]], person1: String, person2: String): Boolean = ???
+  def areConnected(network: Map[String, Set[String]], person1: String, person2: String): Boolean = {
+
+    @tailrec
+    def bfs(target: String, consideredPeople: Set[String], discoveredPeople: Set[String]): Boolean = {
+      if (discoveredPeople.isEmpty) false
+      else {
+        val person = discoveredPeople.head
+        if (person == target) true
+        else if (consideredPeople.contains(person)) bfs(target, consideredPeople, discoveredPeople.tail)
+        else bfs(target, consideredPeople + person, discoveredPeople.tail ++ network(person))
+      }
+    }
+
+    bfs(person2, Set(), network(person1) + person1)
+  }
 
   // Testing
   val person1 = "Alice"
@@ -172,5 +186,8 @@ object TuplesAndMaps extends App {
   println(lonelyPeopleCount(newNetwork9))
   val newNetwork10 = unfriend(newNetwork9, person1, person2)
   println(lonelyPeopleCount(newNetwork10))
+  println(areConnected(newNetwork10, person1, person2))
+  println(areConnected(newNetwork10, person1, person3))
+  println(areConnected(newNetwork10, person1, person4))
 
 }
