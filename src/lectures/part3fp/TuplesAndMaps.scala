@@ -116,7 +116,11 @@ object TuplesAndMaps extends App {
     }
   }
 
-  def friendCount(network: Map[String, List[String]], person: String): Int = ???
+  def friendCount(network: Map[String, List[String]], person: String): Int = {
+    if (network.contains(person)) network(person).length
+    else -1
+  }
+
   def mostPopularPerson(network: Map[String, List[String]]): String = ???
   def lonelyPeopleCount(network: Map[String, List[String]]): Int = ???
   def areConnected(network: Map[String, List[String]], person1: String, person2: String): Boolean = ???
@@ -145,5 +149,7 @@ object TuplesAndMaps extends App {
   unfriend(newNetwork7, person1, person4)
   val newNetwork8 = unfriend(newNetwork7, person2, person1)
   println(newNetwork8)
+  println(friendCount(newNetwork7, person1))
+  println(friendCount(newNetwork7, person4))
 
 }
