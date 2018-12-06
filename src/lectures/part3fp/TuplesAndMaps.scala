@@ -65,4 +65,7 @@ object TuplesAndMaps extends App {
   val mappedPair = entryPair.map(e => e._1.toLowerCase -> e._2)
   println(mappedPair) // prints Map(jim -> 990)
 
+  // 2 - Overly simplified social network
+  val socialNetwork: Map[String, List[String]] = Map() // empty network.
+
 }
