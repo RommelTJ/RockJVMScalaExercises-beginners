@@ -68,5 +68,13 @@ object TuplesAndMaps extends App {
 
   // 2 - Overly simplified social network
   val socialNetwork: Map[String, List[String]] = Map() // empty network.
+  def add(network: Map[String, List[String]], person: String): Map[String, List[String]] = ???
+  def remove(network: Map[String, List[String]], person: String): Map[String, List[String]] = ???
+  def friend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = ???
+  def unfriend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = ???
+  def friendCount(network: Map[String, List[String]], person: String): Int = ???
+  def mostPopularPerson(network: Map[String, List[String]]): String = ???
+  def lonelyPeopleCount(network: Map[String, List[String]]): Int = ???
+  def areConnected(network: Map[String, List[String]], person1: String, person2: String): Boolean = ???
 
 }
