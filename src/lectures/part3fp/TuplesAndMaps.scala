@@ -102,10 +102,10 @@ object TuplesAndMaps extends App {
 
   def unfriend(network: Map[String, Set[String]], person: String, friend: String): Map[String, Set[String]] = {
     if (network.contains(person) && network.contains(friend)) {
-      val personFriendList: Set[String] = network(person).filter(_ != friend)
+      val personFriendList: Set[String] = network(person) - friend
       val newPerson = person -> personFriendList
 
-      val friendFriendList: Set[String] = network(friend).filter(_ != person)
+      val friendFriendList: Set[String] = network(friend) - person
       val newFriend = friend -> friendFriendList
 
       network + newPerson + newFriend
