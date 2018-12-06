@@ -89,17 +89,33 @@ object TuplesAndMaps extends App {
   def friend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = {
     if (network.contains(person) && network.contains(friend)) {
       // Mutually connect people.
-      val friendList: List[String] = List(person, friend)
-      val newPerson = person -> friendList
-      val newFriend = friend -> friendList
+      val personFriendList: List[String] = network(person) :+ friend
+      val newPerson = person -> personFriendList
+
+      val friendFriendList: List[String] = network(friend) :+ person
+      val newFriend = friend -> friendFriendList
       network + newPerson + newFriend
     } else {
       println("Not in network!")
       network
     }
   }
-  
-  def unfriend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = ???
+
+  def unfriend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = {
+    if (network.contains(person) && network.contains(friend)) {
+      val personFriendList: List[String] = network(person).filter(_ != friend)
+      val newPerson = person -> personFriendList
+
+      val friendFriendList: List[String] = network(friend).filter(_ != person)
+      val newFriend = friend -> friendFriendList
+
+      network + newPerson + newFriend
+    } else {
+      println("Not in network!")
+      network
+    }
+  }
+
   def friendCount(network: Map[String, List[String]], person: String): Int = ???
   def mostPopularPerson(network: Map[String, List[String]]): String = ???
   def lonelyPeopleCount(network: Map[String, List[String]]): Int = ???
@@ -109,6 +125,7 @@ object TuplesAndMaps extends App {
   val person1 = "Alice"
   val person2 = "Bob"
   val person3 = "Charles"
+  val person4 = "Doug"
   val newNetwork = add(socialNetwork, person1)
   println(newNetwork)
   println(add(newNetwork, person1))
@@ -122,5 +139,11 @@ object TuplesAndMaps extends App {
   friend(newNetwork4, person1, person3)
   val newNetwork5 = friend(newNetwork4, person1, person2)
   println(newNetwork5)
+  val newNetwork6 = add(newNetwork5, person3)
+  val newNetwork7 = friend(newNetwork6, person1, person3)
+  println(newNetwork7)
+  unfriend(newNetwork7, person1, person4)
+  val newNetwork8 = unfriend(newNetwork7, person2, person1)
+  println(newNetwork8)
 
 }
