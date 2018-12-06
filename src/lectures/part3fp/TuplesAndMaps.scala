@@ -86,7 +86,19 @@ object TuplesAndMaps extends App {
     }
   }
 
-  def friend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = ???
+  def friend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = {
+    if (network.contains(person) && network.contains(friend)) {
+      // Mutually connect people.
+      val friendList: List[String] = List(person, friend)
+      val newPerson = person -> friendList
+      val newFriend = friend -> friendList
+      network + newPerson + newFriend
+    } else {
+      println("Not in network!")
+      network
+    }
+  }
+  
   def unfriend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = ???
   def friendCount(network: Map[String, List[String]], person: String): Int = ???
   def mostPopularPerson(network: Map[String, List[String]]): String = ???
@@ -105,5 +117,10 @@ object TuplesAndMaps extends App {
   remove(newNetwork, person3)
   val newNetwork3 = remove(newNetwork2, person1)
   println(newNetwork3)
+  val newNetwork4 = add(newNetwork3, person1)
+  println(newNetwork4)
+  friend(newNetwork4, person1, person3)
+  val newNetwork5 = friend(newNetwork4, person1, person2)
+  println(newNetwork5)
 
 }
