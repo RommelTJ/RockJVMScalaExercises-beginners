@@ -136,7 +136,8 @@ object TuplesAndMaps extends App {
     network.maxBy(p => p._2.size)._1
   }
 
-  def lonelyPeopleCount(network: Map[String, Set[String]]): Int = ???
+  def lonelyPeopleCount(network: Map[String, Set[String]]): Int = network.filterKeys(p => network(p).isEmpty).size
+
   def areConnected(network: Map[String, Set[String]], person1: String, person2: String): Boolean = ???
 
   // Testing
@@ -168,5 +169,8 @@ object TuplesAndMaps extends App {
   val newNetwork9 = friend(newNetwork8, person1, person2)
   println(newNetwork9)
   println(mostPopularPerson(newNetwork9))
+  println(lonelyPeopleCount(newNetwork9))
+  val newNetwork10 = unfriend(newNetwork9, person1, person2)
+  println(lonelyPeopleCount(newNetwork10))
 
 }
