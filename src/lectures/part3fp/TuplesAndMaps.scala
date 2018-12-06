@@ -1,5 +1,7 @@
 package lectures.part3fp
 
+import scala.annotation.tailrec
+
 object TuplesAndMaps extends App {
 
   // Tuples - finite ordered "lists"
@@ -78,8 +80,18 @@ object TuplesAndMaps extends App {
   }
 
   def remove(network: Map[String, Set[String]], person: String): Map[String, Set[String]] = {
-    if (network.contains(person)) network.filter(_._1 != person)
-    else {
+
+    // Doing it this way to resolve issue with "dangling friendships"
+    @tailrec
+    def removeAux(friends: Set[String], networkAcc: Map[String, Set[String]]): Map[String, Set[String]] = {
+      if (friends.isEmpty) networkAcc
+      else removeAux(friends.tail, unfriend(networkAcc, person, friends.head))
+    }
+
+    if (network.contains(person)) {
+      val unfriended = removeAux(network(person), network)
+      unfriended - person
+    } else {
       println("This person is not in the network!")
       network
     }
