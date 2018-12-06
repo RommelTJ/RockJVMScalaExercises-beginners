@@ -57,4 +57,12 @@ object TuplesAndMaps extends App {
   //     - how many people have no friends
   //     - if there is a social connection between two people (direct or not)
 
+  // 1 - It would map to "jim" -> 990.
+  val entry1 = "Jim" -> 555
+  val entry2 = "JIM" -> 990
+  val entryPair = Map(entry1, entry2)
+  println(entryPair) // prints Map(Jim -> 555, JIM -> 990)
+  val mappedPair = entryPair.map(e => e._1.toLowerCase -> e._2)
+  println(mappedPair) // prints Map(jim -> 990)
+
 }
