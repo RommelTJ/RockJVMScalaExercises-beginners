@@ -132,7 +132,9 @@ object TuplesAndMaps extends App {
     else -1
   }
 
-  def mostPopularPerson(network: Map[String, Set[String]]): String = ???
+  def mostPopularPerson(network: Map[String, Set[String]]): String = {
+    network.maxBy(p => p._2.size)._1
+  }
 
   def lonelyPeopleCount(network: Map[String, Set[String]]): Int = ???
   def areConnected(network: Map[String, Set[String]], person1: String, person2: String): Boolean = ???
@@ -163,5 +165,8 @@ object TuplesAndMaps extends App {
   println(newNetwork8)
   println(friendCount(newNetwork7, person1))
   println(friendCount(newNetwork7, person4))
+  val newNetwork9 = friend(newNetwork8, person1, person2)
+  println(newNetwork9)
+  println(mostPopularPerson(newNetwork9))
 
 }
