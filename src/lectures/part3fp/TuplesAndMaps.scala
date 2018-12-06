@@ -58,6 +58,7 @@ object TuplesAndMaps extends App {
   //     - if there is a social connection between two people (direct or not)
 
   // 1 - It would map to "jim" -> 990.
+  //     Be careful when mapping keys so you don't override values.
   val entry1 = "Jim" -> 555
   val entry2 = "JIM" -> 990
   val entryPair = Map(entry1, entry2)
