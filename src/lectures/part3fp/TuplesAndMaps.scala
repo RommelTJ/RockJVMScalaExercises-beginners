@@ -78,7 +78,14 @@ object TuplesAndMaps extends App {
     }
   }
 
-  def remove(network: Map[String, List[String]], person: String): Map[String, List[String]] = ???
+  def remove(network: Map[String, List[String]], person: String): Map[String, List[String]] = {
+    if (network.contains(person)) network.filter(_._1 != person)
+    else {
+      println("This person is not in the network!")
+      network
+    }
+  }
+
   def friend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = ???
   def unfriend(network: Map[String, List[String]], person: String, friend: String): Map[String, List[String]] = ???
   def friendCount(network: Map[String, List[String]], person: String): Int = ???
@@ -93,6 +100,10 @@ object TuplesAndMaps extends App {
   val newNetwork = add(socialNetwork, person1)
   println(newNetwork)
   println(add(newNetwork, person1))
-  println(add(newNetwork, person2))
+  val newNetwork2 = add(newNetwork, person2)
+  println(newNetwork2)
+  remove(newNetwork, person3)
+  val newNetwork3 = remove(newNetwork2, person1)
+  println(newNetwork3)
 
 }
