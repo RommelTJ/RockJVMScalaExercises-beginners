@@ -18,4 +18,11 @@ object WorkingWithOptions extends App {
   val chainedResult = Option(unsafeMethod()).orElse(Option(backupMethod()))
   println(chainedResult)
 
+  // Design Unsafe APIs
+  def betterUnsafeMethod(): Option[String] = None
+  def betterBackupMethod(): Option[String] = Some("A new result")
+  val betterChainedResult = betterUnsafeMethod().orElse(betterBackupMethod())
+  println(betterChainedResult)
+
+
 }
