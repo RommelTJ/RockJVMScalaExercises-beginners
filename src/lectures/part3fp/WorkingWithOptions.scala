@@ -1,5 +1,7 @@
 package lectures.part3fp
 
+import scala.util.Random
+
 object WorkingWithOptions extends App {
 
   val myFirstOption: Option[Int] = Some(4)
@@ -32,5 +34,26 @@ object WorkingWithOptions extends App {
   println(myFirstOption.map(_ * 2))
   println(myFirstOption.filter(x => x > 10)) // Returns None
   println(myFirstOption.flatMap(x => Option(x * 10))) // prints Some(40)
+
+  // For-Comprehensions.
+  val config: Map[String, String] = Map(
+    // fetched from elsewhere
+    "host" -> "176.45.36.1",
+    "port" -> "80"
+  )
+
+  class Connection {
+    def connect = "Connected" // Connect to some server.
+  }
+
+  object Connection {
+    val random = new Random(System.nanoTime())
+
+    def apply(host: String, port: String): Option[Connection] = {
+      if (random.nextBoolean()) Some(new Connection)
+      else None
+    }
+
+  }
 
 }
