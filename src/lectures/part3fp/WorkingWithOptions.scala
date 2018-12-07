@@ -63,4 +63,11 @@ object WorkingWithOptions extends App {
   val connectionStatus = connection.map(c => c.connect)
   connectionStatus.foreach(println)
 
+  // Another solution using for-comprehensions
+  config.get("host")
+    .flatMap(host => config.get("port")
+      .flatMap(port => Connection(host, port))
+      .map(connection => connection.connect))
+    .foreach(println)
+
 }
