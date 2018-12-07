@@ -28,4 +28,9 @@ object WorkingWithOptions extends App {
   println(myFirstOption.isEmpty)
   println(myFirstOption.get) // unsafe, do not use this.
 
+  // map, flatMap, and filter
+  println(myFirstOption.map(_ * 2))
+  println(myFirstOption.filter(x => x > 10)) // Returns None
+  println(myFirstOption.flatMap(x => Option(x * 10))) // prints Some(40)
+
 }
