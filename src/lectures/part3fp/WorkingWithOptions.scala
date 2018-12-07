@@ -56,4 +56,11 @@ object WorkingWithOptions extends App {
 
   }
 
+  // Try to establish a connection, if so, print the connect method.
+  val host = config.get("host")
+  val port = config.get("port")
+  val connection = host.flatMap(h => port.flatMap(p => Connection.apply(h, p)))
+  val connectionStatus = connection.map(c => c.connect)
+  connectionStatus.foreach(println)
+
 }
