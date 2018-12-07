@@ -13,4 +13,9 @@ object WorkingWithOptions extends App {
   val correct = Option(unsafeMethod()) // Generate Some or None.
   println(correct) // Prints None
 
+  // Chained Methods
+  def backupMethod(): String = "A valid result"
+  val chainedResult = Option(unsafeMethod()).orElse(Option(backupMethod()))
+  println(chainedResult)
+
 }
