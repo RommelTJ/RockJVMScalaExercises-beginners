@@ -24,5 +24,8 @@ object WorkingWithOptions extends App {
   val betterChainedResult = betterUnsafeMethod().orElse(betterBackupMethod())
   println(betterChainedResult)
 
+  // Functions on Options
+  println(myFirstOption.isEmpty)
+  println(myFirstOption.get) // unsafe, do not use this.
 
 }
