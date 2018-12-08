@@ -68,6 +68,8 @@ object HandlingFailure extends App {
   }
 
   // Ex: If you get the HTML page from the connection, print it to the console i.e. call renderHTML.
-
+  val possibleConnection = HttpService.getSafeConnection(hostname, port)
+  val possibleHTML = possibleConnection.flatMap(conn => conn.getSafe("/home"))
+  possibleHTML.foreach(renderHTML)
 
 }
