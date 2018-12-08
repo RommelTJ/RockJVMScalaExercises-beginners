@@ -16,4 +16,10 @@ object HandlingFailure extends App {
   val potentialFailure = Try(unsafeMethod()) // Try objects via the apply method.
   println(potentialFailure) // program doesn't crash!
 
+  // Syntactic sugar
+  val anotherPotentialFailure = Try {
+    unsafeMethod()
+  }
+  println(anotherPotentialFailure)
+
 }
