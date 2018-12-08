@@ -1,6 +1,6 @@
 package lectures.part3fp
 
-import scala.util.{Failure, Success, Try}
+import scala.util.{Failure, Random, Success, Try}
 
 object HandlingFailure extends App {
 
@@ -41,5 +41,27 @@ object HandlingFailure extends App {
   println(aSuccess.map(_ * 2)) // 6
   println(aSuccess.flatMap(x => Success(x * 10))) // Success(30)
   println(aSuccess.filter(_ > 10)) // Failure(java.util.NoSuchElementException: Predicate does not hold for 3)
+  // We can use for-comprehensions
+
+  // Exercise
+  val hostname = "localhost"
+  val port = "8080"
+  def renderHTML(page: String): Unit = println(page)
+
+  class Connection {
+    def get(url: String): String = {
+      val random = new Random(System.nanoTime())
+      if (random.nextBoolean()) "<html>...</html>"
+      else throw new RuntimeException("Connection interrupted")
+    }
+  }
+
+  object HttpService {
+    val random = new Random(System.nanoTime())
+    def getConnection(host: String, port: String): Connection = {
+      if (random.nextBoolean()) new Connection
+      else throw new RuntimeException("Someone took the port!")
+    }
+  }
 
 }
