@@ -13,7 +13,7 @@ object HandlingFailure extends App {
   // Most of the time, you don't have to create those explicitly, because the Try companion object's apply method
   // does it for you.
   def unsafeMethod(): String = throw new RuntimeException("Error!")
-  val potentialFailure = Try(unsafeMethod())
-  println(potentialFailure)
+  val potentialFailure = Try(unsafeMethod()) // Try objects via the apply method.
+  println(potentialFailure) // program doesn't crash!
 
 }
