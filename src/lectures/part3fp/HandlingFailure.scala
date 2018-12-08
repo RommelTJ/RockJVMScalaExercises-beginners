@@ -22,4 +22,8 @@ object HandlingFailure extends App {
   }
   println(anotherPotentialFailure)
 
+  // Utilities
+  println(potentialFailure.isSuccess) // false
+  println(potentialFailure.isFailure)
+
 }
