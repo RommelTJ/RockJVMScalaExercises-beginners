@@ -64,6 +64,7 @@ object HandlingFailure extends App {
       if (random.nextBoolean()) new Connection
       else throw new RuntimeException("Someone took the port!")
     }
+    def getSafeConnection(host: String, port: String): Try[Connection] = Try(getConnection(host, port))
   }
 
   // Ex: If you get the HTML page from the connection, print it to the console i.e. call renderHTML.
