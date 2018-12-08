@@ -31,4 +31,10 @@ object HandlingFailure extends App {
   val fallbackTry = Try(unsafeMethod()).orElse(Try(backupMethod()))
   println(fallbackTry) // Success(Valid!)
 
+  // if you're designing the API, wrap in a try
+  def betterUnsafeMethod(): Try[String] = Failure(new RuntimeException("BOOM"))
+  def betterBackupMethod(): Try[String] = Success("Yay!")
+  val betterFallbackTry = betterUnsafeMethod().orElse(betterBackupMethod())
+  println(betterFallbackTry) // prints Success(Yay!)
+
 }
