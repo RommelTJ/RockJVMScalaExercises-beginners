@@ -77,5 +77,10 @@ object HandlingFailure extends App {
     .flatMap(conn => conn.getSafe("/home"))
     .foreach(renderHTML)
 
+  // For-Comprehension version.
+  for {
+    conn <- HttpService.getSafeConnection(hostname, port)
+    htmlPage <- conn.getSafe("/home")
+  } renderHTML(htmlPage)
 
 }
