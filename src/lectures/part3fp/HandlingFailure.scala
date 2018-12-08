@@ -54,6 +54,8 @@ object HandlingFailure extends App {
       if (random.nextBoolean()) "<html>...</html>"
       else throw new RuntimeException("Connection interrupted")
     }
+
+    def getSafe(url: String): Try[String] = Try { get(url) }
   }
 
   object HttpService {
@@ -63,5 +65,8 @@ object HandlingFailure extends App {
       else throw new RuntimeException("Someone took the port!")
     }
   }
+
+  // Ex: If you get the HTML page from the connection, print it to the console i.e. call renderHTML.
+
 
 }
