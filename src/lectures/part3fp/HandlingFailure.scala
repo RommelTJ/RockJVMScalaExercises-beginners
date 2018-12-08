@@ -37,4 +37,9 @@ object HandlingFailure extends App {
   val betterFallbackTry = betterUnsafeMethod().orElse(betterBackupMethod())
   println(betterFallbackTry) // prints Success(Yay!)
 
+  // Map, flatMap, and Filter
+  println(aSuccess.map(_ * 2)) // 6
+  println(aSuccess.flatMap(x => Success(x * 10))) // Success(30)
+  println(aSuccess.filter(_ > 10)) // Failure(java.util.NoSuchElementException: Predicate does not hold for 3)
+
 }
