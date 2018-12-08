@@ -26,4 +26,9 @@ object HandlingFailure extends App {
   println(potentialFailure.isSuccess) // false
   println(potentialFailure.isFailure)
 
+  // orElse
+  def backupMethod(): String = "Valid!"
+  val fallbackTry = Try(unsafeMethod()).orElse(Try(backupMethod()))
+  println(fallbackTry) // Success(Valid!)
+
 }
