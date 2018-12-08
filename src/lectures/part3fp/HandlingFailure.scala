@@ -72,4 +72,10 @@ object HandlingFailure extends App {
   val possibleHTML = possibleConnection.flatMap(conn => conn.getSafe("/home"))
   possibleHTML.foreach(renderHTML)
 
+  // Short-hand version
+  HttpService.getSafeConnection(hostname, port)
+    .flatMap(conn => conn.getSafe("/home"))
+    .foreach(renderHTML)
+
+
 }
