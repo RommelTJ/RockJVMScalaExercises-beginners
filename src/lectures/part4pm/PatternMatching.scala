@@ -42,4 +42,11 @@ object PatternMatching extends App {
     case Dog(b) => println(s"Matched dog of breed: $b")
   }
 
+  // Don't match everything. It can be more verbose.
+  val isEven = x % 2 == 0
+  val isEven2 = x match {
+    case n if n % 2 == 0 => true
+    case _ => false
+  }
+
 }
