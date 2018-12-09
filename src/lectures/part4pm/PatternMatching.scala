@@ -31,5 +31,15 @@ object PatternMatching extends App {
   // If nothing matches, you get a scala.MatchError
   // The return type will be the unified type of all types in all the cases (i.e. if they're all Strings,
   //   it will be string, if it's a mix, it will be "Any").
+  // Pattern Matching works really well with sealed classes.
+
+  // 2 - Pattern Matching on Sealed hierarchies
+  sealed class Animal
+  case class Dog(breed: String) extends Animal
+  case class Parrot(greeting: String) extends Animal
+  val animal: Animal = Dog("Pug")
+  animal match {
+    case Dog(b) => println(s"Matched dog of breed: $b")
+  }
 
 }
