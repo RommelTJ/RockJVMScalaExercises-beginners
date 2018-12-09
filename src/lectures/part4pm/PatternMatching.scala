@@ -49,4 +49,7 @@ object PatternMatching extends App {
     case _ => false
   }
 
+  val isEvenCond = if (x%2 == 0) true else false
+  val isEvenNorm = x % 2 == 0 // easier to read
+
 }
