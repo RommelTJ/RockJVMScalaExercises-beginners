@@ -26,4 +26,10 @@ object PatternMatching extends App {
   }
   println(greeting)
 
+  // Things to note about Pattern Matching in Scala:
+  // Cases are matched in order.
+  // If nothing matches, you get a scala.MatchError
+  // The return type will be the unified type of all types in all the cases (i.e. if they're all Strings,
+  //   it will be string, if it's a mix, it will be "Any").
+
 }
