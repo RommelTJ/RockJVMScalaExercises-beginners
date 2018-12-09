@@ -20,6 +20,7 @@ object PatternMatching extends App {
   case class Person(name: String, age: Int)
   val bob = Person("Bob", 20)
   val greeting = bob match {
+    case Person(n, a) if a < 21 => s"Hi, my name is $n and I can't drink in the U.S." // Guard statements
     case Person(n, a) => s"Hi, my name is $n and I'm $a years old."
     case _ => "I don't know who I am."
   }
