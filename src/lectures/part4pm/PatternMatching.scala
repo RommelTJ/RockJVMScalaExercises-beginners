@@ -16,4 +16,13 @@ object PatternMatching extends App {
   }
   println(s"$x: $description")
 
+  // 1 - It can decompose values.
+  case class Person(name: String, age: Int)
+  val bob = Person("Bob", 20)
+  val greeting = bob match {
+    case Person(n, a) => s"Hi, my name is $n and I'm $a years old."
+    case _ => "I don't know who I am."
+  }
+  println(greeting)
+
 }
