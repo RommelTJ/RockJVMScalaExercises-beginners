@@ -52,4 +52,17 @@ object PatternMatching extends App {
   val isEvenCond = if (x%2 == 0) true else false
   val isEvenNorm = x % 2 == 0 // easier to read
 
+  // Exercise
+  trait Expr
+  case class Number(n: Int) extends Expr
+  case class Sum(e1: Expr, e2: Expr) extends Expr
+  case class Prod(e1: Expr, e2: Expr) extends Expr
+
+  // Simple function that uses Pattern matching
+  // Takes an Expr => Human Readable form of it.
+  // Ex: Sum(Number(2), Number(3)) => 2 + 3
+  // Ex: Sum(Number(2), Number(3), Number(4)) => 2 + 3 + 4
+  // Ex: Prod(Sum(Number(2), Number(3)), Number(4)) => (2 + 3) * 4
+  // Ex: Sum(Prod(Number(2), Number(1)), Number(3)) => 2 * 1 + 3
+
 }
