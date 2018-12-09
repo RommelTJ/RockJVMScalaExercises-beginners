@@ -65,4 +65,18 @@ object PatternMatching extends App {
   // Ex: Prod(Sum(Number(2), Number(3)), Number(4)) => (2 + 3) * 4
   // Ex: Sum(Prod(Number(2), Number(1)), Number(3)) => 2 * 1 + 3
 
+  def show(e: Expr): String = e match {
+    case Number(n) => s"$n"
+    case Sum(e1, e2) => s"${show(e1)} + ${show(e2)}"
+    case Prod(e1, e2) => {
+      def maybeShowParen(exp: Expr): String = exp match {
+        case Prod(_, _) => show(exp)
+        case Number(_) => show(exp)
+        case _ => s"(${show(exp)})"
+      }
+
+      s"${maybeShowParen(e1)} * ${maybeShowParen(e2)}"
+    }
+  }
+
 }
