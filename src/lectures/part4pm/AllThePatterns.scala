@@ -71,4 +71,9 @@ object AllThePatterns extends App {
     case Empty | Cons(0, _) => "Compound pattern (multi-pattern)"
   }
 
+  // 11 - If Guards
+  val secondElementSpecial = aList match {
+    case Cons(_, Cons(specialElement, _)) if specialElement % 2 == 0 => "Using if guards!"
+  }
+
 }
