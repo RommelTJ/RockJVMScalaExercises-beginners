@@ -52,4 +52,8 @@ object PatternsEverywhere extends App {
     }
   }
 
+  // Both print: List(The One, 2 is even, Something else, 4 is even)
+  println(mappedList)
+  println(mappedList2)
+
 }
