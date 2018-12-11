@@ -21,4 +21,11 @@ object AllThePatterns extends App {
     case something => s"I've found $something" // extracted value
   }
 
+  // 4 - Tuples
+  val aTuple = (1, 2)
+  val matchTuple = aTuple match {
+    case (1, 1) => "tuple"
+    case (something, 2) => s"$something can be extracted"
+  }
+
 }
