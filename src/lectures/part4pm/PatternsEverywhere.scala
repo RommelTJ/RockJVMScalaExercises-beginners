@@ -32,4 +32,9 @@ object PatternsEverywhere extends App {
   println(b) // prints 2
   // Multiple value definition based on pattern matching!
 
+  val head :: tail = list
+  println(head) // prints 1
+  println(tail) // prints List(2, 3, 4)
+  // Also works based on pattern matching.
+
 }
