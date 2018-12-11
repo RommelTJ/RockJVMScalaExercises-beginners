@@ -16,4 +16,9 @@ object AllThePatterns extends App {
     case _ => ""
   }
 
+  // 3 - Match Anything (variable)
+  val matchAVariable = x match {
+    case something => s"I've found $something" // extracted value
+  }
+
 }
