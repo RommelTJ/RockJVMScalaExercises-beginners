@@ -12,4 +12,11 @@ object PatternsEverywhere extends App {
   }
   // Catches are actually matches!
 
+  // Big Idea #2
+  val list = List(1, 2, 3, 4)
+  val evenOnes = for {
+    x <- list if x % 2 == 0 // !?
+  } yield 10 * x
+  // Generators are also based on pattern matching!
+
 }
