@@ -53,4 +53,11 @@ object AllThePatterns extends App {
     case List(1, 2, 3) :+ 42 => "An infix pattern"
   }
 
+  // 8 - Type specifiers
+  val unknown: Any = 2
+  val unknownMatch = unknown match {
+    case list: List[Int] => "This is a list" // explicit type specifier
+    case _ => "Any"
+  }
+
 }
