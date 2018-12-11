@@ -11,4 +11,9 @@ object AllThePatterns extends App {
     case AllThePatterns => "A singleton Object"
   }
 
+  // 2 - Match Anything (wildcard)
+  val matchAnything = x match {
+    case _ => ""
+  }
+
 }
