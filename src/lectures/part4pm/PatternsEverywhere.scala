@@ -19,4 +19,11 @@ object PatternsEverywhere extends App {
   } yield 10 * x
   // Generators are also based on pattern matching!
 
+  val tuples = List((1, 2), (3, 4))
+  val filterTuples = for {
+    (first, second) <- tuples
+  } yield first * second
+  println(filterTuples) // prints List(2, 12)
+  // Case Classes, :: operators, ... also work.
+
 }
