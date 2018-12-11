@@ -26,4 +26,10 @@ object PatternsEverywhere extends App {
   println(filterTuples) // prints List(2, 12)
   // Case Classes, :: operators, ... also work.
 
+  // Big Idea #3
+  val aTuple = (1, 2, 3)
+  val (a, b, c) = aTuple
+  println(b) // prints 2
+  // Multiple value definition based on pattern matching!
+
 }
