@@ -66,4 +66,9 @@ object AllThePatterns extends App {
     case Cons(1, rest @ Cons(2, _)) => "You can also use name binding with nested patterns."
   }
 
+  // 10 - Multi-patterns
+  val multiPattern = aList match {
+    case Empty | Cons(0, _) => "Compound pattern (multi-pattern)"
+  }
+
 }
