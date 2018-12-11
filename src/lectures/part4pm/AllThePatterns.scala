@@ -60,4 +60,10 @@ object AllThePatterns extends App {
     case _ => "Any"
   }
 
+  // 9 - Name Binding
+  val nameBindingMatch = aList match {
+    case nonEmptyList @ Cons(_, _) => "Name Binding, so you can use the name later."
+    case Cons(1, rest @ Cons(2, _)) => "You can also use name binding with nested patterns."
+  }
+
 }
