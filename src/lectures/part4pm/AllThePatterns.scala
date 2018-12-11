@@ -1,5 +1,7 @@
 package lectures.part4pm
 
+import exercises.{Cons, Empty, MyList}
+
 object AllThePatterns extends App {
 
   // 1 - Constants
@@ -32,6 +34,13 @@ object AllThePatterns extends App {
   val nestedTuple = (1, (2, 3))
   val matchNestedTuple = nestedTuple match {
     case (_, (2, v)) => s"Found $v" // nested extracted value.
+  }
+
+  // 6 - Case Classes (Constructor Pattern)
+  val aList: MyList[Int] = Cons(1, Cons(2, Empty))
+  val matchAList = aList match {
+    case Empty => "Do something with empty"
+    case Cons(h, t) => s"Do something with head: $h, and tail: $t"
   }
 
 }
