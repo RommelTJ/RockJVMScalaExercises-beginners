@@ -37,4 +37,19 @@ object PatternsEverywhere extends App {
   println(tail) // prints List(2, 3, 4)
   // Also works based on pattern matching.
 
+  // Big Idea #4 - Partial Function
+  val mappedList = list.map {
+    case v if v % 2 == 0 => s"$v is even"
+    case 1 => "The One"
+    case _ => "Something else"
+  } // Partial Function Literal
+
+  // The above is equivalent to this:
+  val mappedList2 = list.map { x => x match {
+      case v if v % 2 == 0 => s"$v is even"
+      case 1 => "The One"
+      case _ => "Something else"
+    }
+  }
+
 }
