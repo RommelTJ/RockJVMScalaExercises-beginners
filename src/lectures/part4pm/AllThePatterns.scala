@@ -28,4 +28,10 @@ object AllThePatterns extends App {
     case (something, 2) => s"$something can be extracted"
   }
 
+  // 5 - Nested Tuples
+  val nestedTuple = (1, (2, 3))
+  val matchNestedTuple = nestedTuple match {
+    case (_, (2, v)) => s"Found $v" // nested extracted value.
+  }
+
 }
