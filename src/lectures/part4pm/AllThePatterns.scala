@@ -44,4 +44,13 @@ object AllThePatterns extends App {
     case Cons(h, Cons(subhead, t)) => "Case classes can also be nested and extracted"
   }
 
+  // 7 - List Patterns
+  val aStandardList = List(1, 2, 3, 42)
+  val standardListMatching = aStandardList match {
+    case List(1, _, _, _) => "An extractor for a List" // Advanced
+    case List(1, _*) => "A vararg pattern (list of arbitrary length)." // Advanced
+    case 1 :: List(_) => "An infix pattern"
+    case List(1, 2, 3) :+ 42 => "An infix pattern"
+  }
+
 }
