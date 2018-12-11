@@ -41,6 +41,7 @@ object AllThePatterns extends App {
   val matchAList = aList match {
     case Empty => "Do something with empty"
     case Cons(h, t) => s"Do something with head: $h, and tail: $t"
+    case Cons(h, Cons(subhead, t)) => "Case classes can also be nested and extracted"
   }
 
 }
