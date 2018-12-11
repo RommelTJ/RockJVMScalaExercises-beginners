@@ -76,4 +76,14 @@ object AllThePatterns extends App {
     case Cons(_, Cons(specialElement, _)) if specialElement % 2 == 0 => "Using if guards!"
   }
 
+  val numbers = List(1, 2, 3)
+  val numbersMatch = numbers match {
+    case listOfStrings: List[String] => "A List of Strings"
+    case listOfNumbers: List[Int] => "A list of numbers"
+    case _ => ""
+  }
+  println(numbersMatch) // prints A List of Strings
+  // JVM trick question. Java 5 introduced Generics, but to make the JVM backward compatible, the JVM erases all generic
+  // types after Type checking. So a List[String] => List, and a List[Int] => List.
+
 }
